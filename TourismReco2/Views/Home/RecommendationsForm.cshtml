@@ -1,0 +1,129 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Recommendations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>@*Enter following form for Recommendations*@</h2>
+
+<div id="fh5co-page">
+    <section id="fh5co-hero" class="js-fullheight" @*style="background-image: url(/Content/images/hero3.jpg);"*@ data-next="yes">
+        @*<div class="fh5co-overlay"></div>*@
+        <div class="container">
+            <div class="fh5co-intro js-fullheight">
+
+                @using (Html.BeginForm("Recommendations", "Home", FormMethod.Post, new { @class = "reco_form" }))
+                {
+
+                    <div class="reco_form_overlay">
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Country of origin</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Select One</option>
+                                <option>Germany</option>
+                                <option>China</option>
+                                <option>India</option>
+                                <option>Iraq</option>
+                                <option>Iran</option>
+                                <option>Macao</option>
+                                <option>England</option>
+                                <option>USA</option>
+                                <option>Iran</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">Please select what you enjoy the most in your free time (use ctrl to select multiple)</label>
+                            <select multiple class="form-control" id="whenFree">
+                                <option>- Sun, beach, sand</option>
+                                <option>- Open fields and forests</option>
+                                <option>- Historical and cultural sites</option>
+                                <option>- In the most famous and crowded places in the city</option>
+                                <option>- Adventure</option>
+                                <option>- All of the above</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">According to your interest, organize the following activities (use ctrl to select multiple)</label>
+                            <select multiple class="form-control" id="exampleFormControlSelect2">
+                                <option>- Read a book</option>
+                                <option>- Get to know the city</option>
+                                <option>- Physical or sporting activities</option>
+                                <option>- Rest and stay</option>
+                                <option>- Living with nature of the place</option>
+                                <option>- All of the above</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Duration of visit</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Select One</option>
+                                <option>One day</option>
+                                <option>Two days</option>
+                                <option>Three days</option>
+                                <option>Four days</option>
+                                <option>Five days</option>
+                                <option>Six days</option>
+                                <option>Seven days</option>
+                                <option>Eight days</option>
+                                <option>Nine days</option>
+                                <option>Ten days</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Moving speed</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Slow</option>
+                                <option>Moderate</option>
+                                <option>Fast</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Plan a route for me</label>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="includeRoute" id="planRouteYes" value="yes"> Yes
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="includeRoute" id="planRouteNo" value="no"> No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group hide_it" id="weatherInformation">
+                            <label>Consider weather information while planning route</label>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="considerWeather" id="inlineRadio1" value="option1"> Yes
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="considerWeather" id="inlineRadio2" value="option2"> No
+                                </label>
+                            </div>
+                        </div>
+
+
+
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
