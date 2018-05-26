@@ -17,5 +17,4 @@ namespace TourismReco2.Models
             return userIdentity;
         }
     }
-
 }
