@@ -187,6 +187,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-TourismReco2-20171101105706.mdf" />
+    <Content Include="App_Data\aspnet-TourismReco2-20171101105706_log.ldf">
+      <DependentUpon>aspnet-TourismReco2-20171101105706.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\animate.css" />
@@ -421,9 +425,7 @@
     <Content Include="Views\Home\RecommendationsForm.cshtml" />
     <Content Include="Scripts\js\.DS_Store" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
