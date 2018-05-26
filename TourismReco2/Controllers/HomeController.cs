@@ -27,16 +27,6 @@ namespace TourismReco2.Controllers
             return View();
         }
 
-        public ActionResult RecommendationsForm()
-        {
 
-            return View();
-        }
-
-        public ActionResult Recommendations()
-        {
-
-            return View();
-        }
     }
 }

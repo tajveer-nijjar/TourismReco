@@ -39,7 +39,7 @@
                         <p class="animate-box">
                             <a href="https://www.youtube.com/watch?v=fZL76r3rT1c" class="btn btn-outline popup-vimeo btn-video"><i class="icon-play2"></i> Watch video</a>
                             @*<a href="http://freehtml5.co" target="_blank" class="btn btn-primary">Find places to visit</a></p>*@
-                            @Html.ActionLink("Find places to visit", "RecommendationsForm", "Home", "", new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Find places to visit", "RecommendationsForm", new {controller =  "Recommendations"}, new { @class = "btn btn-primary" })
                     </div>
                 </div>
             </div>
