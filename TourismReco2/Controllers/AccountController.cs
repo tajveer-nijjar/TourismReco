@@ -9,7 +9,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TourismReco2.Models;
-using TourismReco2.ViewModels;
 
 namespace TourismReco2.Controllers
 {

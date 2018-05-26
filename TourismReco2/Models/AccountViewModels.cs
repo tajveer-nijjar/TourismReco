@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace TourismReco2.ViewModels
+namespace TourismReco2.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
