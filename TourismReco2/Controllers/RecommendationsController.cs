@@ -32,16 +32,17 @@ namespace TourismReco2.Controllers
             
             var viewModel = new RecommendationsFormViewModel
             {
-                UserId = userId,
+//                UserId = userId,
                 Clans = clans
             };
             
             return View(viewModel);
         }
 
-        public ActionResult Recommendations()
+        public ActionResult Recommendations(RecommendationsFormViewModel checkedOnes)
         {
-
+            var x = checkedOnes;
+            
             return View();
         }
     }

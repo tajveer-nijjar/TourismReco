@@ -18,12 +18,20 @@
                 {
 
                     <div class="reco_form_overlay">
-                        
-                        @foreach (var clan in Model.Clans)
-                        {
-                            <div>@clan.ClanName</div>
-                        }
+@*                        @Html.CheckBoxFor(m => m.Clans[0].IsSelected)*@
+@*                        @Model.Clans[0].ClanName*@
+@*                        @Html.HiddenFor(m => m.Clans[0].ClanId)*@
+@*                        @Html.HiddenFor(m => m.Clans[0].ClanName)*@
 
+                        @for(int i = 0; i < Model.Clans.Count; i++)
+                        {
+                            @Html.CheckBoxFor(m => m.Clans[i].IsSelected)
+                            @Model.Clans[i].ClanName
+                            @Html.HiddenFor(m => m.Clans[i].ClanId)
+                            @Html.HiddenFor(m => m.Clans[i].ClanName)
+                            <br/>
+                        }
+                      
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
 

@@ -195,6 +195,10 @@
     <Compile Include="Migrations\201805260919217_PopulateMoreClans.Designer.cs">
       <DependentUpon>201805260919217_PopulateMoreClans.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805262237120_AddedBoolToClan.cs" />
+    <Compile Include="Migrations\201805262237120_AddedBoolToClan.Designer.cs">
+      <DependentUpon>201805262237120_AddedBoolToClan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\Item.cs" />
@@ -470,6 +474,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805260919217_PopulateMoreClans.resx">
       <DependentUpon>201805260919217_PopulateMoreClans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805262237120_AddedBoolToClan.resx">
+      <DependentUpon>201805262237120_AddedBoolToClan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
