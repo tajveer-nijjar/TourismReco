@@ -102,22 +102,36 @@ namespace TourismReco2.Controllers
 
             //Fetching all clans stored against this user.
             var userId = User.Identity.GetUserId();
-            var userClansIdDatabase = _context.UserClanRegisterations.Where(u => u.UserId == userId).ToList();
+            var userClansInDatabase = _context.UserClanRegisterations.Where(u => u.UserId == userId).ToList();
 
             //Storing selected clan preference in UserClanRegistration table.
-            foreach (var userClan in userClansIdDatabase)
+            foreach (var clanRegisteration in userClansInDatabase)
             {
                 //Finding if UserClan in database is present in current selection
-                var selectedClan = clans.SingleOrDefault(c => c.ClanId == userClan.ClanId);
+                var selectedClan = clans.SingleOrDefault(c => c.ClanId == clanRegisteration.ClanId);
                 if (selectedClan != null)
                 {
-                    userClan.ClanPreference = selectedClan.ClanPreference;
+                    clanRegisteration.ClanPreference = selectedClan.ClanPreference;
                 }
             }
 
             _context.SaveChanges();
             
-            return View("SelectSubClans");
+            //Populate all Clans with respective SubClans to be sent to next page.
+            
+            //Get all clans including subclans
+            var allSubClans = _context.SubClans.ToList();
+            var allClans = _context.Clans.ToList();
+
+            var selectedClans = new List<Clan>();
+
+            foreach (var userClan in userClansInDatabase)
+            {
+                var x = allClans.SingleOrDefault(ac => ac.ClanId == userClan.ClanId);
+                selectedClans.Add(x);
+            }
+            
+            return View("SelectSubClans", selectedClans);
         }
     }
 }

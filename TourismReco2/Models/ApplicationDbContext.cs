@@ -10,6 +10,7 @@ namespace TourismReco2.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Clan> Clans { get; set; }
+        public DbSet<SubClan> SubClans { get; set; }
         public DbSet<UserClanRegisteration> UserClanRegisterations { get; set; }
 
         public ApplicationDbContext()
