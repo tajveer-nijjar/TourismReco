@@ -215,6 +215,14 @@
     <Compile Include="Migrations\201805270256366_UndoModifiedClanClass.Designer.cs">
       <DependentUpon>201805270256366_UndoModifiedClanClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805270320184_AddedClanPreferenceInUserClanRegistration.cs" />
+    <Compile Include="Migrations\201805270320184_AddedClanPreferenceInUserClanRegistration.Designer.cs">
+      <DependentUpon>201805270320184_AddedClanPreferenceInUserClanRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270334084_AddedNavigationPropertiesinUserclanRegistration.cs" />
+    <Compile Include="Migrations\201805270334084_AddedNavigationPropertiesinUserclanRegistration.Designer.cs">
+      <DependentUpon>201805270334084_AddedNavigationPropertiesinUserclanRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -509,6 +517,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805270256366_UndoModifiedClanClass.resx">
       <DependentUpon>201805270256366_UndoModifiedClanClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270320184_AddedClanPreferenceInUserClanRegistration.resx">
+      <DependentUpon>201805270320184_AddedClanPreferenceInUserClanRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270334084_AddedNavigationPropertiesinUserclanRegistration.resx">
+      <DependentUpon>201805270334084_AddedNavigationPropertiesinUserclanRegistration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

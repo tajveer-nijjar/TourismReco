@@ -44,8 +44,10 @@ namespace TourismReco2.Controllers
             var checkedClans = viewModel.Clans.Where(c => c.IsSelected == true).ToList();
 
             var currentUserId = User.Identity.GetUserId();
-            var currentUserName = User.Identity.GetUserName();
 
+            //Fetching already selected clans against this user:
+            var userClans = _context.UserClanRegisterations.Where(u => u.UserId == currentUserId).ToList();
+            
             foreach (var clan in checkedClans)
             {
                 var userClanRegistration = new UserClanRegisteration()
@@ -54,13 +56,30 @@ namespace TourismReco2.Controllers
                     UserId = currentUserId
                 };
 
+                //Checking if user already registered to the clan.
+                var x = userClans.FirstOrDefault(uc => uc.UserId == currentUserId && uc.ClanId == clan.ClanId);
+                if (x == null)
+                {
+                    _context.UserClanRegisterations.Add(userClanRegistration);
+                    userClans.Add(userClanRegistration);
+                }
 
-                _context.UserClanRegisterations.Add(userClanRegistration);
             }
 
             _context.SaveChanges();
 
-            return View("SelectClanPriority", checkedClans);
+            //Fetching only clans that are registered to a user
+            var clans = new List<Clan>();
+            var allClans = _context.Clans.ToList();
+            foreach (var clanRegisteration in userClans)
+            {
+                var registeredClan = allClans.SingleOrDefault(ac => ac.ClanId == clanRegisteration.ClanId);
+                clans.Add(registeredClan);
+            }
+            
+            
+            
+            return View("SelectClanPriority", clans);
         }
 
         public ActionResult SaveClanPriority(List<Clan> clans)
@@ -80,6 +99,23 @@ namespace TourismReco2.Controllers
                     clan.ClanPreference = 1;
                 }
             }
+
+            //Fetching all clans stored against this user.
+            var userId = User.Identity.GetUserId();
+            var userClansIdDatabase = _context.UserClanRegisterations.Where(u => u.UserId == userId).ToList();
+
+            //Storing selected clan preference in UserClanRegistration table.
+            foreach (var userClan in userClansIdDatabase)
+            {
+                //Finding if UserClan in database is present in current selection
+                var selectedClan = clans.SingleOrDefault(c => c.ClanId == userClan.ClanId);
+                if (selectedClan != null)
+                {
+                    userClan.ClanPreference = selectedClan.ClanPreference;
+                }
+            }
+
+            _context.SaveChanges();
             
             return View("SelectSubClans");
         }
