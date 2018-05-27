@@ -6,3 +6,30 @@
 }
 
 <h2>title</h2>
+@using (Html.BeginForm("Recommendations", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
+{
+
+    <div class="reco_form_overlay">
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <h2>@Model[i].ClanName</h2>
+
+            for (int j = 0; j < Model[i].SubClans.Count; j++)
+            {
+                 @Html.TextBoxFor(m => m[i].SubClans[j], new { @class = "form-control", Value = " " })
+                 @Model[i].SubClans[j].SubClanName
+                 <br/>
+            }
+
+
+@*            @Html.CheckBoxFor(m => m.Clans[i].IsSelected)*@
+@*            @Html.HiddenFor(m => m.Clans[i].ClanId)*@
+@*            @Html.HiddenFor(m => m.Clans[i].ClanName)*@
+            <br />
+        }
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+}
