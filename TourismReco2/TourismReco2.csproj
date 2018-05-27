@@ -235,6 +235,26 @@
     <Compile Include="Migrations\201805270413189_PopulateMoreSubClans.Designer.cs">
       <DependentUpon>201805270413189_PopulateMoreSubClans.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805270831464_AddedSubClanPriorityRegistration.cs" />
+    <Compile Include="Migrations\201805270831464_AddedSubClanPriorityRegistration.Designer.cs">
+      <DependentUpon>201805270831464_AddedSubClanPriorityRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270835539_ModifiedSubClanPriorityRegistration.cs" />
+    <Compile Include="Migrations\201805270835539_ModifiedSubClanPriorityRegistration.Designer.cs">
+      <DependentUpon>201805270835539_ModifiedSubClanPriorityRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270932044_ModifiedSubClanPriorityRegistration2.cs" />
+    <Compile Include="Migrations\201805270932044_ModifiedSubClanPriorityRegistration2.Designer.cs">
+      <DependentUpon>201805270932044_ModifiedSubClanPriorityRegistration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270932364_ModifiedSubClanPriorityRegistration3.cs" />
+    <Compile Include="Migrations\201805270932364_ModifiedSubClanPriorityRegistration3.Designer.cs">
+      <DependentUpon>201805270932364_ModifiedSubClanPriorityRegistration3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271019129_ModifiedClan.cs" />
+    <Compile Include="Migrations\201805271019129_ModifiedClan.Designer.cs">
+      <DependentUpon>201805271019129_ModifiedClan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -242,6 +262,7 @@
     <Compile Include="Models\ItemType.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\SubClan.cs" />
+    <Compile Include="Models\SubClanPriorityRegistration.cs" />
     <Compile Include="Models\UserClanRegisteration.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -482,11 +503,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Recommendations\Recommendations.cshtml" />
     <Content Include="Views\Recommendations\RecommendationsForm.cshtml" />
     <Content Include="Scripts\js\.DS_Store" />
     <Content Include="Views\Recommendations\SelectSubClans.cshtml" />
     <Content Include="Views\Recommendations\SelectClanPriority.cshtml" />
+    <Content Include="Views\Recommendations\Recommendations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -544,6 +565,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805270413189_PopulateMoreSubClans.resx">
       <DependentUpon>201805270413189_PopulateMoreSubClans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270831464_AddedSubClanPriorityRegistration.resx">
+      <DependentUpon>201805270831464_AddedSubClanPriorityRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270835539_ModifiedSubClanPriorityRegistration.resx">
+      <DependentUpon>201805270835539_ModifiedSubClanPriorityRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270932044_ModifiedSubClanPriorityRegistration2.resx">
+      <DependentUpon>201805270932044_ModifiedSubClanPriorityRegistration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270932364_ModifiedSubClanPriorityRegistration3.resx">
+      <DependentUpon>201805270932364_ModifiedSubClanPriorityRegistration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271019129_ModifiedClan.resx">
+      <DependentUpon>201805271019129_ModifiedClan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,12 +1,12 @@
 ﻿@model TourismReco2.Models.ViewModels.RecommendationsFormViewModel
 
 @{
-    ViewBag.Title = "Recommendations";
+    ViewBag.Title = "SaveSelectedClans";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 
-<h2>@*Enter following form for Recommendations*@</h2>
+<h2>@*Enter following form for SaveSelectedClans*@</h2>
 
 <div id="fh5co-page">
     <section id="fh5co-hero" class="js-fullheight" @*style="background-image: url(/Content/images/hero3.jpg);"*@ data-next="yes">
@@ -14,7 +14,7 @@
         <div class="container">
             <div class="fh5co-intro js-fullheight">
 
-                @using (Html.BeginForm("Recommendations", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
+                @using (Html.BeginForm("SaveSelectedClans", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
                 {
 
                     <div class="reco_form_overlay">
@@ -28,6 +28,8 @@
                             <br/>
                         }
                       
+                        @Html.HiddenFor(m => m.UserId)
+                        
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
 

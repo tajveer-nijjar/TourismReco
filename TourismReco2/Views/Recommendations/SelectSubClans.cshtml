@@ -16,13 +16,18 @@
 
             for (int j = 0; j < Model[i].SubClans.Count; j++)
             {
-                 @Html.TextBoxFor(m => m[i].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })
-                 @Model[i].SubClans[j].SubClanName
-                 <br/>
+                @Html.HiddenFor(m => m[i].ClanId)
+                @Html.HiddenFor(m => m[i].SubClans[j].SubClanId)
+                @Html.TextBoxFor(m => m[i].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })
+                @Model[i].SubClans[j].SubClanName
+                <br />
             }
-@*            @Html.CheckBoxFor(m => m.Clans[i].IsSelected)*@
-@*            @Html.HiddenFor(m => m.Clans[i].ClanId)*@
-@*            @Html.HiddenFor(m => m.Clans[i].ClanName)*@
+            @*            @Html.CheckBoxFor(m => m.Clans[i].IsSelected)*@
+            @*            @Html.HiddenFor(m => m.Clans[i].ClanId)*@
+            @*            @Html.HiddenFor(m => m.Clans[i].ClanName)*@
+
+            @Html.HiddenFor(m => m[i].UserId)
+
             <br />
         }
 

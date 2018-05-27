@@ -32,14 +32,14 @@ namespace TourismReco2.Controllers
             
             var viewModel = new RecommendationsFormViewModel
             {
-//                UserId = userId,
+                UserId = userId,
                 Clans = clans
             };
             
             return View(viewModel);
         }
 
-        public ActionResult Recommendations(RecommendationsFormViewModel viewModel)
+        public ActionResult SaveSelectedClans(RecommendationsFormViewModel viewModel)
         {
             var checkedClans = viewModel.Clans.Where(c => c.IsSelected == true).ToList();
 
@@ -74,6 +74,7 @@ namespace TourismReco2.Controllers
             foreach (var clanRegisteration in userClans)
             {
                 var registeredClan = allClans.SingleOrDefault(ac => ac.ClanId == clanRegisteration.ClanId);
+                registeredClan.UserId = currentUserId;
                 clans.Add(registeredClan);
             }
             
@@ -108,7 +109,8 @@ namespace TourismReco2.Controllers
             foreach (var clanRegisteration in userClansInDatabase)
             {
                 //Finding if UserClan in database is present in current selection
-                var selectedClan = clans.SingleOrDefault(c => c.ClanId == clanRegisteration.ClanId);
+                var selectedClan = clans.SingleOrDefault(c =>
+                    c.ClanId == clanRegisteration.ClanId && c.UserId == clanRegisteration.UserId);
                 if (selectedClan != null)
                 {
                     clanRegisteration.ClanPreference = selectedClan.ClanPreference;
@@ -136,6 +138,53 @@ namespace TourismReco2.Controllers
 
         public ActionResult SaveSubClanPriority(List<Clan> clans)
         {
+            var userClanRegistrations = _context.UserClanRegisterations.ToList();
+            var subClansInDb = _context.SubClans.ToList();
+            var clansInDb = _context.Clans.ToList();
+            var registeredClans = new List<Clan>();
+
+            //Adding ClanPreference values that are stored in the database to the "clans" list.
+            foreach (var clanRegisteration in userClanRegistrations)
+            {
+                var clan = clansInDb.FirstOrDefault(c => c.ClanId == clanRegisteration.ClanId);
+                if (clanRegisteration.UserId == User.Identity.GetUserId())
+                {
+                    clan.ClanPreference = clanRegisteration.ClanPreference;
+                    registeredClans.Add(clan);
+                }
+            }
+
+            var subClans = clans.SelectMany(c => c.SubClans).ToList();
+
+            //Adding SubClanPriorities
+            foreach (var clan in registeredClans)
+            {
+                foreach (var subClan in clan.SubClans)
+                {
+                    var foundSubClan = subClans.SingleOrDefault(s => s.SubClanId == subClan.SubClanId);
+
+                    subClan.SubClanPriority = foundSubClan.SubClanPriority;
+                }
+            }
+
+
+            foreach (var clan in registeredClans)
+            {
+                foreach (var subClan in clan.SubClans)
+                {
+                    var subClanPriorityRegistration = new SubClanPriorityRegistration()
+                    {
+                        SubClanId = subClan.SubClanId,
+                        UserId = User.Identity.GetUserId(),
+                        PriorityLevel = clan.ClanPreference * subClan.SubClanPriority
+                    };
+
+                    _context.SubClanPriorityRegistrations.Add(subClanPriorityRegistration);
+                }
+            }
+            
+            _context.SaveChanges();
+            
             return View();
         }
     }
