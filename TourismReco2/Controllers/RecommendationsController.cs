@@ -12,10 +12,12 @@ namespace TourismReco2.Controllers
     public class RecommendationsController: Controller
     {
         private readonly ApplicationDbContext _context;
+        private List<CalculatedRecommendation> _calculatedRecommendationses;
 
         public RecommendationsController()
         {
             _context = new ApplicationDbContext();
+            _calculatedRecommendationses = new List<CalculatedRecommendation>();
 
         }
 
@@ -184,8 +186,46 @@ namespace TourismReco2.Controllers
             }
             
             _context.SaveChanges();
+
+            CalculateRecommendations();
             
-            return View();
+            return View("Recommendations");
+        }
+
+        private void CalculateRecommendations()
+        {
+            var subClanRegistrations = _context.SubClanPriorityRegistrations.ToList();
+
+            var subClanRegistrationsForCurrentUSer =
+                subClanRegistrations.Where(r => r.UserId == User.Identity.GetUserId()).ToList();
+
+            //            var subClans = subClanRegistrationsForCurrentUSer.Where(r => r.SubClanId);
+
+            var allItems = _context.Items.ToList();
+
+            foreach (var registration in subClanRegistrationsForCurrentUSer)
+            {
+                var subClanId = registration.SubClanId;
+
+                var subClanItems = allItems.Where(a => a.SubClanId == subClanId).ToList();
+
+                foreach (var subClanItem in subClanItems)
+                {
+                    var calculatedReco = new CalculatedRecommendation()
+                    {
+                        UserId = User.Identity.GetUserId(),
+                        CalcultedWeight = (subClanItem.ItemRating * registration.PriorityLevel).Value,
+                        ItemId = subClanItem.ItemId,
+                        SubClandId = subClanId
+                    };
+
+                    _context.CalculatedRecommendations.Add(calculatedReco);
+
+                }
+            }
+
+            _context.SaveChanges();
+
         }
     }
 }

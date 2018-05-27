@@ -255,6 +255,34 @@
     <Compile Include="Migrations\201805271019129_ModifiedClan.Designer.cs">
       <DependentUpon>201805271019129_ModifiedClan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805271859057_ModifiedItemClass.cs" />
+    <Compile Include="Migrations\201805271859057_ModifiedItemClass.Designer.cs">
+      <DependentUpon>201805271859057_ModifiedItemClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271956083_ModifiedItem.cs" />
+    <Compile Include="Migrations\201805271956083_ModifiedItem.Designer.cs">
+      <DependentUpon>201805271956083_ModifiedItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271957329_ModifiedItem2.cs" />
+    <Compile Include="Migrations\201805271957329_ModifiedItem2.Designer.cs">
+      <DependentUpon>201805271957329_ModifiedItem2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271957564_PopulateItems.cs" />
+    <Compile Include="Migrations\201805271957564_PopulateItems.Designer.cs">
+      <DependentUpon>201805271957564_PopulateItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271958527_PopulateItems2.cs" />
+    <Compile Include="Migrations\201805271958527_PopulateItems2.Designer.cs">
+      <DependentUpon>201805271958527_PopulateItems2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805272015332_PopulateItems3.cs" />
+    <Compile Include="Migrations\201805272015332_PopulateItems3.Designer.cs">
+      <DependentUpon>201805272015332_PopulateItems3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805272051136_AddedCalculatedRecoClass.cs" />
+    <Compile Include="Migrations\201805272051136_AddedCalculatedRecoClass.Designer.cs">
+      <DependentUpon>201805272051136_AddedCalculatedRecoClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -267,6 +295,7 @@
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\ViewModels\CalculatedRecommendation.cs" />
     <Compile Include="Models\ViewModels\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\RecommendationsFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -580,6 +609,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805271019129_ModifiedClan.resx">
       <DependentUpon>201805271019129_ModifiedClan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271859057_ModifiedItemClass.resx">
+      <DependentUpon>201805271859057_ModifiedItemClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271956083_ModifiedItem.resx">
+      <DependentUpon>201805271956083_ModifiedItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271957329_ModifiedItem2.resx">
+      <DependentUpon>201805271957329_ModifiedItem2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271957564_PopulateItems.resx">
+      <DependentUpon>201805271957564_PopulateItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271958527_PopulateItems2.resx">
+      <DependentUpon>201805271958527_PopulateItems2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805272015332_PopulateItems3.resx">
+      <DependentUpon>201805272015332_PopulateItems3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805272051136_AddedCalculatedRecoClass.resx">
+      <DependentUpon>201805272051136_AddedCalculatedRecoClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

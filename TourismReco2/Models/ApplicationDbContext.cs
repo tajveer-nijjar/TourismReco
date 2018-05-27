@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity.EntityFramework;
+using TourismReco2.Models.ViewModels;
 
 namespace TourismReco2.Models
 {
@@ -13,6 +14,9 @@ namespace TourismReco2.Models
         public DbSet<SubClan> SubClans { get; set; }
         public DbSet<UserClanRegisteration> UserClanRegisterations { get; set; }
         public DbSet<SubClanPriorityRegistration> SubClanPriorityRegistrations { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<CalculatedRecommendation> CalculatedRecommendations { get; set; }
+        
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

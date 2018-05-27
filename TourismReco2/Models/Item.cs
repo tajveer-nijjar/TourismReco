@@ -4,7 +4,7 @@
     {
         public int ItemId { get; set; }
         public string ItemName { get; set; }
-        public ItemType ItemType { get; set; }
+        public ItemType? ItemType { get; set; }
 
         public string ItemAddress { get; set; }
 
@@ -12,8 +12,8 @@
 
         public float ItemRating { get; set; }
 
-        public Location Location { get; set; }
+//        public Location Location { get; set; }
 
-        public int SubClassId { get; set; }
+        public int SubClanId { get; set; }
     }
 }
