@@ -188,8 +188,10 @@ namespace TourismReco2.Controllers
             _context.SaveChanges();
 
             CalculateRecommendations();
+
+            var viewModel = ShowCalculatedRecommendations();
             
-            return View("Recommendations");
+            return View("Recommendations", viewModel);
         }
 
         private void CalculateRecommendations()
@@ -216,16 +218,30 @@ namespace TourismReco2.Controllers
                         UserId = User.Identity.GetUserId(),
                         CalcultedWeight = (subClanItem.ItemRating * registration.PriorityLevel).Value,
                         ItemId = subClanItem.ItemId,
+                        Item = subClanItem,
                         SubClandId = subClanId
                     };
 
                     _context.CalculatedRecommendations.Add(calculatedReco);
-
                 }
             }
 
             _context.SaveChanges();
+        }
 
+        
+        private ShowRecommendationsViewModel ShowCalculatedRecommendations()
+        {
+            var allCalculatedReco = _context.CalculatedRecommendations.ToList();
+
+            var recoForCurrentUser = allCalculatedReco.Where(r => r.UserId == User.Identity.GetUserId()).ToList();
+
+            var viewModel = new ShowRecommendationsViewModel()
+            {
+                CalculatedRecommendations = recoForCurrentUser
+            };
+
+            return viewModel;
         }
     }
 }
