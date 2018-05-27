@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "title";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>title</h2>
@@ -17,12 +16,10 @@
 
             for (int j = 0; j < Model[i].SubClans.Count; j++)
             {
-                 @Html.TextBoxFor(m => m[i].SubClans[j], new { @class = "form-control", Value = " " })
+                 @Html.TextBoxFor(m => m[i].SubClans[j], new { @class = "form-control small_textbox", Value = " " })
                  @Model[i].SubClans[j].SubClanName
                  <br/>
             }
-
-
 @*            @Html.CheckBoxFor(m => m.Clans[i].IsSelected)*@
 @*            @Html.HiddenFor(m => m.Clans[i].ClanId)*@
 @*            @Html.HiddenFor(m => m.Clans[i].ClanName)*@

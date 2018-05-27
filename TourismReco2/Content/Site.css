@@ -250,3 +250,10 @@ textarea {
 .navbar {
     background: rgba(141, 197, 63, .4);
 }
+
+
+.small_textbox {
+    width: 100px !important;
+    background: white !important;
+    display: inline-block !important;
+}
