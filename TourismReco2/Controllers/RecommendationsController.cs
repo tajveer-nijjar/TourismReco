@@ -133,5 +133,10 @@ namespace TourismReco2.Controllers
             
             return View("SelectSubClans", selectedClans);
         }
+
+        public ActionResult SaveSubClanPriority(List<Clan> clans)
+        {
+            return View();
+        }
     }
 }

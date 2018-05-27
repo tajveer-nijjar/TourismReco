@@ -5,7 +5,7 @@
 }
 
 <h2>title</h2>
-@using (Html.BeginForm("Recommendations", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
+@using (Html.BeginForm("SaveSubClanPriority", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
 {
 
     <div class="reco_form_overlay">
@@ -16,7 +16,7 @@
 
             for (int j = 0; j < Model[i].SubClans.Count; j++)
             {
-                 @Html.TextBoxFor(m => m[i].SubClans[j], new { @class = "form-control small_textbox", Value = " " })
+                 @Html.TextBoxFor(m => m[i].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })
                  @Model[i].SubClans[j].SubClanName
                  <br/>
             }
