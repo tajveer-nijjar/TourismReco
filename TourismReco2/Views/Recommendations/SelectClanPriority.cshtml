@@ -24,16 +24,13 @@
                         @Html.HiddenFor(m => m[i].ClanName)
 
                         @Html.Label("Low Priority")
-@*                        @Html.RadioButton("ClanPriority" + i, 1);*@
                         @Html.RadioButtonFor(m => m[i].ClanPreference, "1")
 
                         @Html.Label("Medium Priority")
-@*                        @Html.RadioButton("ClanPriority" + i, 2);*@
                         @Html.RadioButtonFor(m => m[i].ClanPreference, "2")
 
 
                         @Html.Label("High Priority")
-@*                        @Html.RadioButton("ClanPriority" + i, 3);*@
                         @Html.RadioButtonFor(m => m[i].ClanPreference, "3")
 
 

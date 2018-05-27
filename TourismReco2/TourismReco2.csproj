@@ -223,6 +223,18 @@
     <Compile Include="Migrations\201805270334084_AddedNavigationPropertiesinUserclanRegistration.Designer.cs">
       <DependentUpon>201805270334084_AddedNavigationPropertiesinUserclanRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805270411533_ModifiedSubClanClass.cs" />
+    <Compile Include="Migrations\201805270411533_ModifiedSubClanClass.Designer.cs">
+      <DependentUpon>201805270411533_ModifiedSubClanClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270412257_PopulateSubClans.cs" />
+    <Compile Include="Migrations\201805270412257_PopulateSubClans.Designer.cs">
+      <DependentUpon>201805270412257_PopulateSubClans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270413189_PopulateMoreSubClans.cs" />
+    <Compile Include="Migrations\201805270413189_PopulateMoreSubClans.Designer.cs">
+      <DependentUpon>201805270413189_PopulateMoreSubClans.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -523,6 +535,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805270334084_AddedNavigationPropertiesinUserclanRegistration.resx">
       <DependentUpon>201805270334084_AddedNavigationPropertiesinUserclanRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270411533_ModifiedSubClanClass.resx">
+      <DependentUpon>201805270411533_ModifiedSubClanClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270412257_PopulateSubClans.resx">
+      <DependentUpon>201805270412257_PopulateSubClans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270413189_PopulateMoreSubClans.resx">
+      <DependentUpon>201805270413189_PopulateMoreSubClans.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

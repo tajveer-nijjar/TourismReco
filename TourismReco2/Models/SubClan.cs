@@ -6,7 +6,7 @@ namespace TourismReco2.Models
     {
         public int SubClanId { get; set; }
         public string SubClanName { get; set; }
-        public int SubClanPriority { get; set; }
+        public int? SubClanPriority { get; set; }
         public List<Item> Items { get; set; }
         public int ClanId { get; set; }
         
