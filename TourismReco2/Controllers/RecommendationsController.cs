@@ -39,11 +39,28 @@ namespace TourismReco2.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Recommendations(RecommendationsFormViewModel checkedOnes)
+        public ActionResult Recommendations(RecommendationsFormViewModel viewModel)
         {
-            var x = checkedOnes;
-            
-            return View();
+            var checkedClans = viewModel.Clans.Where(c => c.IsSelected == true).ToList();
+
+            var currentUserId = User.Identity.GetUserId();
+            var currentUserName = User.Identity.GetUserName();
+
+            foreach (var clan in checkedClans)
+            {
+                var userClanRegistration = new UserClanRegisteration()
+                {
+                    ClanId = clan.ClanId,
+                    UserId = currentUserId
+                };
+
+
+                _context.UserClanRegisterations.Add(userClanRegistration);
+            }
+
+            _context.SaveChanges();
+
+            return View("SelectSubClans");
         }
     }
 }

@@ -199,12 +199,21 @@
     <Compile Include="Migrations\201805262237120_AddedBoolToClan.Designer.cs">
       <DependentUpon>201805262237120_AddedBoolToClan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805270142226_AddedUserClanRegistration.cs" />
+    <Compile Include="Migrations\201805270142226_AddedUserClanRegistration.Designer.cs">
+      <DependentUpon>201805270142226_AddedUserClanRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270144227_ModifiedUserClanRegistration.cs" />
+    <Compile Include="Migrations\201805270144227_ModifiedUserClanRegistration.Designer.cs">
+      <DependentUpon>201805270144227_ModifiedUserClanRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemType.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\SubClan.cs" />
+    <Compile Include="Models\UserClanRegisteration.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -447,6 +456,7 @@
     <Content Include="Views\Recommendations\Recommendations.cshtml" />
     <Content Include="Views\Recommendations\RecommendationsForm.cshtml" />
     <Content Include="Scripts\js\.DS_Store" />
+    <Content Include="Views\Recommendations\SelectSubClans.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -477,6 +487,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805262237120_AddedBoolToClan.resx">
       <DependentUpon>201805262237120_AddedBoolToClan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270142226_AddedUserClanRegistration.resx">
+      <DependentUpon>201805270142226_AddedUserClanRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270144227_ModifiedUserClanRegistration.resx">
+      <DependentUpon>201805270144227_ModifiedUserClanRegistration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
