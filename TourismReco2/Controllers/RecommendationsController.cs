@@ -60,6 +60,27 @@ namespace TourismReco2.Controllers
 
             _context.SaveChanges();
 
+            return View("SelectClanPriority", checkedClans);
+        }
+
+        public ActionResult SaveClanPriority(List<Clan> clans)
+        {
+            foreach (var clan in clans)
+            {
+                if (clan.ClanPreference == 1)
+                {
+                    clan.ClanPreference = .3;
+                }
+                else if (clan.ClanPreference == 2)
+                {
+                    clan.ClanPreference = .6;
+                }
+                else if (clan.ClanPreference == 3)
+                {
+                    clan.ClanPreference = 1;
+                }
+            }
+            
             return View("SelectSubClans");
         }
     }

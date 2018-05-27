@@ -207,8 +207,17 @@
     <Compile Include="Migrations\201805270144227_ModifiedUserClanRegistration.Designer.cs">
       <DependentUpon>201805270144227_ModifiedUserClanRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805270254457_ModifiedClanClass.cs" />
+    <Compile Include="Migrations\201805270254457_ModifiedClanClass.Designer.cs">
+      <DependentUpon>201805270254457_ModifiedClanClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270256366_UndoModifiedClanClass.cs" />
+    <Compile Include="Migrations\201805270256366_UndoModifiedClanClass.Designer.cs">
+      <DependentUpon>201805270256366_UndoModifiedClanClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
+    <Compile Include="Models\ClanPriority.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemType.cs" />
     <Compile Include="Models\Location.cs" />
@@ -457,6 +466,7 @@
     <Content Include="Views\Recommendations\RecommendationsForm.cshtml" />
     <Content Include="Scripts\js\.DS_Store" />
     <Content Include="Views\Recommendations\SelectSubClans.cshtml" />
+    <Content Include="Views\Recommendations\SelectClanPriority.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -493,6 +503,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805270144227_ModifiedUserClanRegistration.resx">
       <DependentUpon>201805270144227_ModifiedUserClanRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270254457_ModifiedClanClass.resx">
+      <DependentUpon>201805270254457_ModifiedClanClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270256366_UndoModifiedClanClass.resx">
+      <DependentUpon>201805270256366_UndoModifiedClanClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

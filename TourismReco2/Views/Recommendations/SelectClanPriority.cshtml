@@ -1,0 +1,49 @@
+﻿@model List<TourismReco2.Models.Clan>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Select Clan priority</h2>
+
+
+<div id="fh5co-page">
+    <section id="fh5co-hero" class="js-fullheight" @*style="background-image: url(/Content/images/hero3.jpg);"*@ data-next="yes">
+        <div class="container">
+            <div class="fh5co-intro js-fullheight">
+
+                @using (Html.BeginForm("SaveClanPriority", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
+                {
+                    for (int i = 0; i < Model.Count; i++)
+                    {
+                        @Model[i].ClanName <br />
+
+                        @Html.HiddenFor(m => m[i].ClanId)
+                        @Html.HiddenFor(m => m[i].ClanName)
+
+                        @Html.Label("Low Priority")
+@*                        @Html.RadioButton("ClanPriority" + i, 1);*@
+                        @Html.RadioButtonFor(m => m[i].ClanPreference, "1")
+
+                        @Html.Label("Medium Priority")
+@*                        @Html.RadioButton("ClanPriority" + i, 2);*@
+                        @Html.RadioButtonFor(m => m[i].ClanPreference, "2")
+
+
+                        @Html.Label("High Priority")
+@*                        @Html.RadioButton("ClanPriority" + i, 3);*@
+                        @Html.RadioButtonFor(m => m[i].ClanPreference, "3")
+
+
+                        <br /><br />
+                    }
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                }
+            </div>
+        </div>
+    </section>
+</div>
