@@ -190,6 +190,7 @@ namespace TourismReco2.Controllers
             CalculateRecommendations();
 
             var viewModel = ShowCalculatedRecommendations();
+            viewModel.CalculatedRecommendations.OrderByDescending(r => r.CalcultedWeight);
             
             return View("Recommendations", viewModel);
         }

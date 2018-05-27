@@ -26,24 +26,32 @@
 
                     <ul class="list-group">
 
+                        @for (int i = 0; i < Model.CalculatedRecommendations.Count; i++)
+                        {
+                        <li class="list-group-item">
+@*                            @Html.CheckBoxFor(r => r.CalculatedRecommendations[i].ChosenByUser.Value) &nbsp; &nbsp; &nbsp;*@
+                            @Model.CalculatedRecommendations[i].Item.ItemName | @Model.CalculatedRecommendations[i].CalcultedWeight
+                        </li>
+
+                        }
+
                         @foreach (var reco in Model.CalculatedRecommendations)
                         {
-                            <li class="list-group-item">@reco.Item.ItemName</li>
 
                         }
 
 
-@*                        <li class="list-group-item">Milford Sound</li>*@
-@*                        <li class="list-group-item">Firdland national park</li>*@
-@*                        <li class="list-group-item">Milford track</li>*@
-@*                        <li class="list-group-item">Routeburn track</li>*@
-@*                        <li class="list-group-item">Kepler track</li>*@
-@*                        <li class="list-group-item">Lake Te Anau</li>*@
-@*                        <li class="list-group-item">Hollyford Track</li>*@
-@*                        <li class="list-group-item">Manapouri Power Station</li>*@
-@*                        <li class="list-group-item">Southland museum and art gallery</li>*@
-@*                        <li class="list-group-item">Queens park, invercargill</li>*@
-@*                        <li class="list-group-item">Bill Richardson transport world</li>*@
+                        @*                        <li class="list-group-item">Milford Sound</li>*@
+                        @*                        <li class="list-group-item">Firdland national park</li>*@
+                        @*                        <li class="list-group-item">Milford track</li>*@
+                        @*                        <li class="list-group-item">Routeburn track</li>*@
+                        @*                        <li class="list-group-item">Kepler track</li>*@
+                        @*                        <li class="list-group-item">Lake Te Anau</li>*@
+                        @*                        <li class="list-group-item">Hollyford Track</li>*@
+                        @*                        <li class="list-group-item">Manapouri Power Station</li>*@
+                        @*                        <li class="list-group-item">Southland museum and art gallery</li>*@
+                        @*                        <li class="list-group-item">Queens park, invercargill</li>*@
+                        @*                        <li class="list-group-item">Bill Richardson transport world</li>*@
                     </ul>
                 </div>
             </div>

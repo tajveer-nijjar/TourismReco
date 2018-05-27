@@ -287,6 +287,10 @@
     <Compile Include="Migrations\201805272104462_ModifiedCalculatedRecommendationClass.Designer.cs">
       <DependentUpon>201805272104462_ModifiedCalculatedRecommendationClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805272125299_PopulatedItemsAgain.cs" />
+    <Compile Include="Migrations\201805272125299_PopulatedItemsAgain.Designer.cs">
+      <DependentUpon>201805272125299_PopulatedItemsAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -638,6 +642,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805272104462_ModifiedCalculatedRecommendationClass.resx">
       <DependentUpon>201805272104462_ModifiedCalculatedRecommendationClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805272125299_PopulatedItemsAgain.resx">
+      <DependentUpon>201805272125299_PopulatedItemsAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
