@@ -7,6 +7,7 @@ namespace TourismReco2.Models.ViewModels
 {
     public class CalculatedRecommendation
     {
+        
         public int Id { get; set; }
         public string UserId { get; set; }
         public int ItemId { get; set; }

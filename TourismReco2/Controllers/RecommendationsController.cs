@@ -189,8 +189,7 @@ namespace TourismReco2.Controllers
 
             CalculateRecommendations();
 
-            var viewModel = ShowCalculatedRecommendations();
-            viewModel.CalculatedRecommendations.OrderByDescending(r => r.CalcultedWeight);
+            var viewModel = CreateViewModelToShow();
             
             return View("Recommendations", viewModel);
         }
@@ -231,10 +230,15 @@ namespace TourismReco2.Controllers
         }
 
         
-        private ShowRecommendationsViewModel ShowCalculatedRecommendations()
+        private ShowRecommendationsViewModel CreateViewModelToShow()
         {
             var allCalculatedReco = _context.CalculatedRecommendations.ToList();
 
+            foreach (var calculatedRecommendation in allCalculatedReco)
+            {
+                calculatedRecommendation.ChosenByUser = false;
+            }
+            
             var recoForCurrentUser = allCalculatedReco.Where(r => r.UserId == User.Identity.GetUserId()).OrderByDescending(r => r.CalcultedWeight).ToList();
 
             var viewModel = new ShowRecommendationsViewModel()
