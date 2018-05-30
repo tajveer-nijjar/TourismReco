@@ -191,7 +191,7 @@ namespace TourismReco2.Controllers
 
             var viewModel = CreateViewModelToShow();
             
-            return View("Recommendations", viewModel);
+            return View("ShowRecommendations", viewModel);
         }
 
         private void CalculateRecommendations()
@@ -247,6 +247,24 @@ namespace TourismReco2.Controllers
             };
 
             return viewModel;
+        }
+
+        public ActionResult ShowSelectedItems(ShowRecommendationsViewModel viewModel)
+        {
+            var list = new List<string>();
+            foreach (var recommendation in viewModel.CalculatedRecommendations)
+            {
+                if (recommendation.ChosenByUser != null)
+                {
+                    if (recommendation.ChosenByUser == true)
+                    {
+                        list.Add(recommendation.UserId);
+                    }
+                }
+            }
+            
+            
+            return View();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace TourismReco2.Models.ViewModels
         
         public double CalcultedWeight { get; set; }
 
-        public bool? ChosenByUser { get; set; }
+        public bool ChosenByUser { get; set; }
         
     }
 }

@@ -291,6 +291,10 @@
     <Compile Include="Migrations\201805272125299_PopulatedItemsAgain.Designer.cs">
       <DependentUpon>201805272125299_PopulatedItemsAgain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805302243197_ModifiedItemClass1.cs" />
+    <Compile Include="Migrations\201805302243197_ModifiedItemClass1.Designer.cs">
+      <DependentUpon>201805302243197_ModifiedItemClass1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -545,7 +549,7 @@
     <Content Include="Scripts\js\.DS_Store" />
     <Content Include="Views\Recommendations\SelectSubClans.cshtml" />
     <Content Include="Views\Recommendations\SelectClanPriority.cshtml" />
-    <Content Include="Views\Recommendations\Recommendations.cshtml" />
+    <Content Include="Views\Recommendations\ShowRecommendations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -645,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805272125299_PopulatedItemsAgain.resx">
       <DependentUpon>201805272125299_PopulatedItemsAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805302243197_ModifiedItemClass1.resx">
+      <DependentUpon>201805302243197_ModifiedItemClass1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
