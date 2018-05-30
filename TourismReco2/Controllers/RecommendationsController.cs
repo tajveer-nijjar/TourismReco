@@ -235,7 +235,7 @@ namespace TourismReco2.Controllers
         {
             var allCalculatedReco = _context.CalculatedRecommendations.ToList();
 
-            var recoForCurrentUser = allCalculatedReco.Where(r => r.UserId == User.Identity.GetUserId()).ToList();
+            var recoForCurrentUser = allCalculatedReco.Where(r => r.UserId == User.Identity.GetUserId()).OrderByDescending(r => r.CalcultedWeight).ToList();
 
             var viewModel = new ShowRecommendationsViewModel()
             {
