@@ -295,19 +295,24 @@
     <Compile Include="Migrations\201805302243197_ModifiedItemClass1.Designer.cs">
       <DependentUpon>201805302243197_ModifiedItemClass1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805302330368_AddedSelectedRecommendations.cs" />
+    <Compile Include="Migrations\201805302330368_AddedSelectedRecommendations.Designer.cs">
+      <DependentUpon>201805302330368_AddedSelectedRecommendations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemType.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\SelectedRecommendations.cs" />
     <Compile Include="Models\SubClan.cs" />
     <Compile Include="Models\SubClanPriorityRegistration.cs" />
     <Compile Include="Models\UserClanRegisteration.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\ViewModels\CalculatedRecommendation.cs" />
+    <Compile Include="Models\CalculatedRecommendation.cs" />
     <Compile Include="Models\ViewModels\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\RecommendationsFormViewModel.cs" />
     <Compile Include="Models\ViewModels\ShowRecommendationsViewModel.cs" />
@@ -550,6 +555,7 @@
     <Content Include="Views\Recommendations\SelectSubClans.cshtml" />
     <Content Include="Views\Recommendations\SelectClanPriority.cshtml" />
     <Content Include="Views\Recommendations\ShowRecommendations.cshtml" />
+    <Content Include="Views\Recommendations\ShowSelectedRecommendations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -652,6 +658,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805302243197_ModifiedItemClass1.resx">
       <DependentUpon>201805302243197_ModifiedItemClass1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805302330368_AddedSelectedRecommendations.resx">
+      <DependentUpon>201805302330368_AddedSelectedRecommendations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

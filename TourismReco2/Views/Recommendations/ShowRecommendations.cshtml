@@ -10,7 +10,7 @@
 
 <div id="fh5co-page">
 
-    @using (Html.BeginForm("ShowSelectedItems", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
+    @using (Html.BeginForm("ShowSelectedRecommendations", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
     {
         <section id="fh5co-hero" class="js-fullheight" data-next="yes">
             <div class="container">
@@ -35,17 +35,17 @@
                                     @Model.CalculatedRecommendations[i].Item.ItemName | @Model.CalculatedRecommendations[i].CalcultedWeight
 
                                     @Html.HiddenFor(r => r.CalculatedRecommendations[i].ItemId)
+                                    @Html.HiddenFor(r => r.CalculatedRecommendations[i].Item)
                                     @Html.HiddenFor(r => r.CalculatedRecommendations[i].UserId)
-@*                                    @Html.HiddenFor(r => r.CalculatedRecommendations[i].ChosenByUser)*@
+                                    @*                                    @Html.HiddenFor(r => r.CalculatedRecommendations[i].ChosenByUser)*@
                                 </li>
 
                             }
 
                         </ul>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-
                 </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </section>
     }

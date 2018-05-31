@@ -1,0 +1,51 @@
+﻿@model List<TourismReco2.Models.SelectedRecommendation>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>title</h2>
+<div id="fh5co-page">
+
+    @using (Html.BeginForm("SaveSubClanPriority", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
+    {
+
+        <div class="reco_form_overlay">
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+
+                <ul class="list-group">
+
+                        <li class="list-group-item">
+                            @Html.CheckBoxFor(r => r[i].ChosenByUser) &nbsp; &nbsp; &nbsp;
+                            @Model[i].Item.ItemName | @Model[i].CalcultedWeight
+
+                            @Html.HiddenFor(r => r[i].ItemId)
+                            @Html.HiddenFor(r => r[i].UserId)
+                            @*                                    @Html.HiddenFor(r => r.CalculatedRecommendations[i].ChosenByUser)*@
+                        </li>
+
+
+                </ul>
+
+
+                @*        for (int j = 0; j < Model[i].SubClans.Count; j++)*@
+                @*        {*@
+                @*            @Html.HiddenFor(m => m[i].ClanId)*@
+                @*            @Html.HiddenFor(m => m[i].SubClans[j].SubClanId)*@
+                @*            @Html.TextBoxFor(m => m[i].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })*@
+                @*            @Model[i].SubClans[j].SubClanName*@
+                @*            <br />*@
+                @*        }*@
+
+                @*        @Html.HiddenFor(m => m[i].UserId)*@
+
+                <br />
+            }
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    }
+</div>

@@ -16,6 +16,7 @@ namespace TourismReco2.Models
         public DbSet<SubClanPriorityRegistration> SubClanPriorityRegistrations { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<CalculatedRecommendation> CalculatedRecommendations { get; set; }
+        public DbSet<SelectedRecommendation> SelectedRecommendations { get; set; }
         
 
         public ApplicationDbContext()

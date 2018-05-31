@@ -12,13 +12,16 @@ namespace TourismReco2.Controllers
     public class RecommendationsController: Controller
     {
         private readonly ApplicationDbContext _context;
-        private List<CalculatedRecommendation> _calculatedRecommendationses;
+        private List<CalculatedRecommendation> _calculatedRecommendations;
+        private List<SelectedRecommendation> _selectedRecommendations;
+        private CalculatedRecommendation _calculatedRecommendation;
 
         public RecommendationsController()
         {
             _context = new ApplicationDbContext();
-            _calculatedRecommendationses = new List<CalculatedRecommendation>();
-
+            _calculatedRecommendations = new List<CalculatedRecommendation>();
+            _selectedRecommendations = new List<SelectedRecommendation>();
+            _calculatedRecommendation = new CalculatedRecommendation();
         }
 
         protected override void Dispose(bool disposing)
@@ -194,6 +197,56 @@ namespace TourismReco2.Controllers
             return View("ShowRecommendations", viewModel);
         }
 
+        
+
+        public ActionResult ShowSelectedRecommendations(ShowRecommendationsViewModel viewModel)
+        {
+            var recommendations = new List<CalculatedRecommendation>();
+            foreach (var recommendation in viewModel.CalculatedRecommendations)
+            {
+                if (recommendation.ChosenByUser != null)
+                {
+                    if (recommendation.ChosenByUser == true)
+                    {
+                        recommendations.Add(recommendation);
+                        
+                        var selectedRecommendation = new SelectedRecommendation()
+                        {
+                            ItemId = recommendation.ItemId,
+                            CalcultedWeight = recommendation.CalcultedWeight,
+                            ChosenByUser = recommendation.ChosenByUser,
+                            Item = recommendation.Item,
+                            SubClandId = recommendation.SubClandId,
+                            UserId = recommendation.UserId
+                        };
+
+                        _context.SelectedRecommendations.Add(selectedRecommendation);
+                        _selectedRecommendations.Add(selectedRecommendation);
+                    }
+                }
+            }
+            
+            _context.SaveChanges();
+
+            FillDataWithItems();
+            
+            return View(_selectedRecommendations);
+        }
+
+        private void FillDataWithItems()
+        {
+            var allItems = _context.Items.ToList();
+            
+            foreach (var recommendation in _selectedRecommendations)
+            {
+                var item = allItems.FirstOrDefault(i => i.ItemId == recommendation.ItemId);
+
+                recommendation.Item = item;
+            }
+        }
+
+        //************************************PRIVATE METHODS************************************//
+
         private void CalculateRecommendations()
         {
             var subClanRegistrations = _context.SubClanPriorityRegistrations.ToList();
@@ -213,7 +266,7 @@ namespace TourismReco2.Controllers
 
                 foreach (var subClanItem in subClanItems)
                 {
-                    var calculatedReco = new CalculatedRecommendation()
+                    _calculatedRecommendation = new CalculatedRecommendation()
                     {
                         UserId = User.Identity.GetUserId(),
                         CalcultedWeight = (subClanItem.ItemRating * registration.PriorityLevel).Value,
@@ -222,24 +275,25 @@ namespace TourismReco2.Controllers
                         SubClandId = subClanId
                     };
 
-                    _context.CalculatedRecommendations.Add(calculatedReco);
+                    //                    _context.CalculatedRecommendations.Add(calculatedReco);
+                    _calculatedRecommendations.Add(_calculatedRecommendation);
                 }
             }
 
-            _context.SaveChanges();
+            //            _context.SaveChanges();
         }
 
-        
+
         private ShowRecommendationsViewModel CreateViewModelToShow()
         {
-            var allCalculatedReco = _context.CalculatedRecommendations.ToList();
+            //            var allCalculatedReco = _context.CalculatedRecommendations.ToList();
 
-            foreach (var calculatedRecommendation in allCalculatedReco)
+            foreach (var calculatedRecommendation in _calculatedRecommendations)
             {
                 calculatedRecommendation.ChosenByUser = false;
             }
-            
-            var recoForCurrentUser = allCalculatedReco.Where(r => r.UserId == User.Identity.GetUserId()).OrderByDescending(r => r.CalcultedWeight).ToList();
+
+            var recoForCurrentUser = _calculatedRecommendations.Where(r => r.UserId == User.Identity.GetUserId()).OrderByDescending(r => r.CalcultedWeight).ToList();
 
             var viewModel = new ShowRecommendationsViewModel()
             {
@@ -247,24 +301,6 @@ namespace TourismReco2.Controllers
             };
 
             return viewModel;
-        }
-
-        public ActionResult ShowSelectedItems(ShowRecommendationsViewModel viewModel)
-        {
-            var list = new List<string>();
-            foreach (var recommendation in viewModel.CalculatedRecommendations)
-            {
-                if (recommendation.ChosenByUser != null)
-                {
-                    if (recommendation.ChosenByUser == true)
-                    {
-                        list.Add(recommendation.UserId);
-                    }
-                }
-            }
-            
-            
-            return View();
         }
     }
 }
