@@ -304,6 +304,10 @@
     <Compile Include="Migrations\201805310701599_AddedGeoPointToSelectedRecommendations.Designer.cs">
       <DependentUpon>201805310701599_AddedGeoPointToSelectedRecommendations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805310731462_MovedGeoPointToItem.cs" />
+    <Compile Include="Migrations\201805310731462_MovedGeoPointToItem.Designer.cs">
+      <DependentUpon>201805310731462_MovedGeoPointToItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -670,6 +674,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805310701599_AddedGeoPointToSelectedRecommendations.resx">
       <DependentUpon>201805310701599_AddedGeoPointToSelectedRecommendations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805310731462_MovedGeoPointToItem.resx">
+      <DependentUpon>201805310731462_MovedGeoPointToItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

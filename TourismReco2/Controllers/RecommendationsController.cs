@@ -237,16 +237,6 @@ namespace TourismReco2.Controllers
             return View(_selectedRecommendations);
         }
 
-        private async Task<GeoPoint> GenerateGeoPoints(string address)
-        {
-            var result = await GoogleAddressSearch.SearchAsync(address);
-
-            GeoPoint geoPoint = (result == null)
-                ? new GeoPoint() { Lat = -41.318847, Lng = 174.805794 }   //Tranzit office's address
-                : new GeoPoint() { Lat = result.Latitude, Lng = result.Longitude };
-
-            return geoPoint;
-        }
 
 
         
@@ -321,8 +311,19 @@ namespace TourismReco2.Controllers
                 recommendation.Item = item;
 
                 var geoPoint = await GenerateGeoPoints(recommendation.Item.ItemAddress);
-                recommendation.GeoPoint = geoPoint;
+                recommendation.Item.GeoPoint = geoPoint;
             }
+        }
+
+        private async Task<GeoPoint> GenerateGeoPoints(string address)
+        {
+            var result = await GoogleAddressSearch.SearchAsync(address);
+
+            GeoPoint geoPoint = (result == null)
+                ? new GeoPoint() { Lat = -41.318847, Lng = 174.805794 }   //Tranzit office's address
+                : new GeoPoint() { Lat = result.Latitude, Lng = result.Longitude };
+
+            return geoPoint;
         }
 
     }

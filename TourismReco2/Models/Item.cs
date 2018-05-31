@@ -7,6 +7,7 @@
         public ItemType? ItemType { get; set; }
 
         public string ItemAddress { get; set; }
+        public GeoPoint GeoPoint { get; set; }
 
         public string ItemDescription { get; set; }
 
