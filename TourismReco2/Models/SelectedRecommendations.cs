@@ -14,6 +14,7 @@
 
         public bool ChosenByUser { get; set; }
 
+        public GeoPoint GeoPoint { get; set; }
 
     }
 }

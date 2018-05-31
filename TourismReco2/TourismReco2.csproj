@@ -175,6 +175,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HelperClasses\GoogleAddressSearch.cs" />
     <Compile Include="Migrations\201710312207316_initial_migration.cs" />
     <Compile Include="Migrations\201710312207316_initial_migration.Designer.cs">
       <DependentUpon>201710312207316_initial_migration.cs</DependentUpon>
@@ -299,9 +300,14 @@
     <Compile Include="Migrations\201805302330368_AddedSelectedRecommendations.Designer.cs">
       <DependentUpon>201805302330368_AddedSelectedRecommendations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805310701599_AddedGeoPointToSelectedRecommendations.cs" />
+    <Compile Include="Migrations\201805310701599_AddedGeoPointToSelectedRecommendations.Designer.cs">
+      <DependentUpon>201805310701599_AddedGeoPointToSelectedRecommendations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
+    <Compile Include="Models\GeoPoint.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemType.cs" />
     <Compile Include="Models\Location.cs" />
@@ -661,6 +667,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805302330368_AddedSelectedRecommendations.resx">
       <DependentUpon>201805302330368_AddedSelectedRecommendations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805310701599_AddedGeoPointToSelectedRecommendations.resx">
+      <DependentUpon>201805310701599_AddedGeoPointToSelectedRecommendations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

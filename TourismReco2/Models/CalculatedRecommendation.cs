@@ -13,6 +13,8 @@
         public double CalcultedWeight { get; set; }
 
         public bool ChosenByUser { get; set; }
+
+        
         
     }
 }

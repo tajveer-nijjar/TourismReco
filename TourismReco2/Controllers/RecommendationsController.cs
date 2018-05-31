@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using TourismReco2.HelperClasses;
 using TourismReco2.Models;
 using TourismReco2.Models.ViewModels;
 
 namespace TourismReco2.Controllers
 {
-    public class RecommendationsController: Controller
+    public class RecommendationsController : Controller
     {
         private readonly ApplicationDbContext _context;
         private List<CalculatedRecommendation> _calculatedRecommendations;
@@ -24,23 +26,23 @@ namespace TourismReco2.Controllers
             _calculatedRecommendation = new CalculatedRecommendation();
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            _context.Dispose();
-        }
+//        protected override void Dispose(bool disposing)
+//        {
+//            _context.Dispose();
+//        }
 
         [Authorize]
         public ActionResult RecommendationsForm()
         {
             var clans = _context.Clans.ToList();
             var userId = User.Identity.GetUserId();
-            
+
             var viewModel = new RecommendationsFormViewModel
             {
                 UserId = userId,
                 Clans = clans
             };
-            
+
             return View(viewModel);
         }
 
@@ -52,7 +54,7 @@ namespace TourismReco2.Controllers
 
             //Fetching already selected clans against this user:
             var userClans = _context.UserClanRegisterations.Where(u => u.UserId == currentUserId).ToList();
-            
+
             foreach (var clan in checkedClans)
             {
                 var userClanRegistration = new UserClanRegisteration()
@@ -82,9 +84,9 @@ namespace TourismReco2.Controllers
                 registeredClan.UserId = currentUserId;
                 clans.Add(registeredClan);
             }
-            
-            
-            
+
+
+
             return View("SelectClanPriority", clans);
         }
 
@@ -123,9 +125,9 @@ namespace TourismReco2.Controllers
             }
 
             _context.SaveChanges();
-            
+
             //Populate all Clans with respective SubClans to be sent to next page.
-            
+
             //Get all clans including subclans
             var allSubClans = _context.SubClans.ToList();
             var allClans = _context.Clans.ToList();
@@ -137,7 +139,7 @@ namespace TourismReco2.Controllers
                 var x = allClans.SingleOrDefault(ac => ac.ClanId == userClan.ClanId);
                 selectedClans.Add(x);
             }
-            
+
             return View("SelectSubClans", selectedClans);
         }
 
@@ -187,19 +189,17 @@ namespace TourismReco2.Controllers
                     _context.SubClanPriorityRegistrations.Add(subClanPriorityRegistration);
                 }
             }
-            
+
             _context.SaveChanges();
 
             CalculateRecommendations();
 
             var viewModel = CreateViewModelToShow();
-            
+
             return View("ShowRecommendations", viewModel);
         }
 
-        
-
-        public ActionResult ShowSelectedRecommendations(ShowRecommendationsViewModel viewModel)
+        public async Task<ActionResult> ShowSelectedRecommendations(ShowRecommendationsViewModel viewModel)
         {
             var recommendations = new List<CalculatedRecommendation>();
             foreach (var recommendation in viewModel.CalculatedRecommendations)
@@ -209,7 +209,7 @@ namespace TourismReco2.Controllers
                     if (recommendation.ChosenByUser == true)
                     {
                         recommendations.Add(recommendation);
-                        
+
                         var selectedRecommendation = new SelectedRecommendation()
                         {
                             ItemId = recommendation.ItemId,
@@ -220,33 +220,40 @@ namespace TourismReco2.Controllers
                             UserId = recommendation.UserId
                         };
 
+                        
+
                         _context.SelectedRecommendations.Add(selectedRecommendation);
                         _selectedRecommendations.Add(selectedRecommendation);
                     }
                 }
             }
-            
+
+
+            await FillDataWithItems();
+
             _context.SaveChanges();
 
-            FillDataWithItems();
-            
+
             return View(_selectedRecommendations);
         }
 
-        private void FillDataWithItems()
+        private async Task<GeoPoint> GenerateGeoPoints(string address)
         {
-            var allItems = _context.Items.ToList();
-            
-            foreach (var recommendation in _selectedRecommendations)
-            {
-                var item = allItems.FirstOrDefault(i => i.ItemId == recommendation.ItemId);
+            var result = await GoogleAddressSearch.SearchAsync(address);
 
-                recommendation.Item = item;
-            }
+            GeoPoint geoPoint = (result == null)
+                ? new GeoPoint() { Lat = -41.318847, Lng = 174.805794 }   //Tranzit office's address
+                : new GeoPoint() { Lat = result.Latitude, Lng = result.Longitude };
+
+            return geoPoint;
         }
 
+
+        
         //************************************PRIVATE METHODS************************************//
 
+        
+        
         private void CalculateRecommendations()
         {
             var subClanRegistrations = _context.SubClanPriorityRegistrations.ToList();
@@ -302,5 +309,21 @@ namespace TourismReco2.Controllers
 
             return viewModel;
         }
+
+        private async Task FillDataWithItems()
+        {
+            var allItems = _context.Items.ToList();
+
+            foreach (var recommendation in _selectedRecommendations)
+            {
+                var item = allItems.FirstOrDefault(i => i.ItemId == recommendation.ItemId);
+
+                recommendation.Item = item;
+
+                var geoPoint = await GenerateGeoPoints(recommendation.Item.ItemAddress);
+                recommendation.GeoPoint = geoPoint;
+            }
+        }
+
     }
 }
