@@ -25,6 +25,8 @@ namespace TourismReco2
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/RecoForm.css",
+                      
                       "~/Content/Site.css"));
         }
     }

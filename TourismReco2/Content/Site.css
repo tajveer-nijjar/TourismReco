@@ -248,7 +248,7 @@ textarea {
 
 
 .navbar {
-    background: rgba(141, 197, 63, .4);
+    background: rgba(141, 197, 63, .7);
 }
 
 
@@ -256,4 +256,13 @@ textarea {
     width: 100px !important;
     background: white !important;
     display: inline-block !important;
+}
+
+
+#fh5co-header #fh5co-logo a {
+    color: white !important;
+}
+
+#fh5co-header nav ul li a {
+    color: rgba(255, 255, 255, 0.8) !important;
 }

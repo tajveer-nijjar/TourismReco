@@ -8,7 +8,7 @@
 
 <h2>@*Enter following form for SaveSelectedClans*@</h2>
 
-<div id="fh5co-page">
+<div id="recommendationForm">
     <section id="fh5co-hero" class="js-fullheight" @*style="background-image: url(/Content/images/hero3.jpg);"*@ data-next="yes">
         @*<div class="fh5co-overlay"></div>*@
         <div class="container">
@@ -17,21 +17,30 @@
                 @using (Html.BeginForm("SaveSelectedClans", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
                 {
 
-                    <div class="reco_form_overlay">
+                    <div class="row">
 
-                        @for(int i = 0; i < Model.Clans.Count; i++)
+
+                        @for (int i = 0; i < Model.Clans.Count; i++)
                         {
-                            @Html.CheckBoxFor(m => m.Clans[i].IsSelected)
-                            @Model.Clans[i].ClanName
-                            @Html.HiddenFor(m => m.Clans[i].ClanId)
-                            @Html.HiddenFor(m => m.Clans[i].ClanName)
-                            <br/>
+                            <div class="col-md-3 clan background-@i">
+                                <div class="clan-overlay">
+
+                                    <div class="content">
+                                        @Html.CheckBoxFor(m => m.Clans[i].IsSelected, new { @class = "checkbox" })
+                                        <p class="clan-name">@Model.Clans[i].ClanName</p>
+                                        @Html.HiddenFor(m => m.Clans[i].ClanId)
+                                        @Html.HiddenFor(m => m.Clans[i].ClanName)
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
                         }
-                      
+
                         @Html.HiddenFor(m => m.UserId)
-                        
-                        <button type="submit" class="btn btn-primary">Submit</button>
+
+
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
 
                 }
             </div>

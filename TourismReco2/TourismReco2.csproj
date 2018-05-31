@@ -308,6 +308,10 @@
     <Compile Include="Migrations\201805310731462_MovedGeoPointToItem.Designer.cs">
       <DependentUpon>201805310731462_MovedGeoPointToItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805311956065_RemovedDateTimeFromUserClanRegistration.cs" />
+    <Compile Include="Migrations\201805311956065_RemovedDateTimeFromUserClanRegistration.Designer.cs">
+      <DependentUpon>201805311956065_RemovedDateTimeFromUserClanRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -330,6 +334,18 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BarRating\examples.js" />
+    <Content Include="Content\BarRating\jquery-1.11.2.min.js" />
+    <Content Include="Content\BarRating\themes\bars-1to10.css" />
+    <Content Include="Content\BarRating\themes\bars-horizontal.css" />
+    <Content Include="Content\BarRating\themes\bars-movie.css" />
+    <Content Include="Content\BarRating\themes\bars-pill.css" />
+    <Content Include="Content\BarRating\themes\bars-reversed.css" />
+    <Content Include="Content\BarRating\themes\bars-square.css" />
+    <Content Include="Content\BarRating\themes\bootstrap-stars.css" />
+    <Content Include="Content\BarRating\themes\css-stars.css" />
+    <Content Include="Content\BarRating\themes\fontawesome-stars-o.css" />
+    <Content Include="Content\BarRating\themes\fontawesome-stars.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\animate.css" />
@@ -379,14 +395,24 @@
     <Content Include="Content\images\person5.jpg" />
     <Content Include="Content\images\person6.jpg" />
     <Content Include="Content\images\person7.jpg" />
+    <Content Include="Content\images\photo0.jpg" />
+    <Content Include="Content\images\photo1.jpg" />
+    <Content Include="Content\images\photo2.jpg" />
+    <Content Include="Content\images\photo3.jpg" />
+    <Content Include="Content\images\photo4.jpg" />
+    <Content Include="Content\images\photo5.jpg" />
+    <Content Include="Content\images\photo6.jpg" />
+    <Content Include="Content\images\photo7.jpg" />
     <Content Include="Content\images\Preloader_2.gif" />
     <Content Include="Content\images\white_wave.png" />
     <Content Include="Content\images\white_wave_%402X.png" />
+    <Content Include="Content\RecoForm.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\BarRating\jquery.barrating.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\css\.DS_Store" />
@@ -677,6 +703,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805310731462_MovedGeoPointToItem.resx">
       <DependentUpon>201805310731462_MovedGeoPointToItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805311956065_RemovedDateTimeFromUserClanRegistration.resx">
+      <DependentUpon>201805311956065_RemovedDateTimeFromUserClanRegistration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

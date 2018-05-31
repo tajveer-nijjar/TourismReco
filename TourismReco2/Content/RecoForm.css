@@ -1,0 +1,81 @@
+﻿#recommendationForm {
+    margin-top: 100px;
+}
+
+    #recommendationForm .clan {
+        height: 150px;
+        /*        border: 1px solid red;*/
+        /*        margin-right: 10px;*/
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #recommendationForm .background-0 {
+        background: url('images/photo0.jpg');
+        background-size: cover;
+    }
+
+    #recommendationForm .background-1 {
+        background: url('images/photo1.jpg');
+        background-size: cover;
+    }
+
+    #recommendationForm .background-2 {
+        background: url('images/photo2.jpg');
+        background-size: cover;
+    }
+
+    #recommendationForm .background-3 {
+        background: url('images/photo3.jpg');
+        background-size: cover;
+    }
+
+    #recommendationForm .background-4 {
+        background: url('images/photo4.jpg');
+        background-size: cover;
+    }
+
+    #recommendationForm .background-5 {
+        background: url('images/photo5.jpg');
+        background-size: cover;
+    }
+
+    #recommendationForm .background-6 {
+        background: url('images/photo6.jpg');
+        background-size: cover;
+    }
+
+    #recommendationForm .background-7 {
+        background: url('images/photo7.jpg');
+        background-size: cover;
+    }
+
+    #recommendationForm .clan .clan-overlay {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 130%;
+        background: rgba(0,0,0, .4);
+    }
+
+    #recommendationForm .clan .content {
+        margin-top: 120px;
+        margin-left: 10px;
+    }
+
+    #recommendationForm .clan .checkbox {
+        display: inline-block;
+    }
+
+    #recommendationForm .clan p.clan-name {
+        display: inline-block;
+        color: white;
+        font-weight: 600;
+    }
+
+#recommendationForm .btn {
+    margin-top: 20px;
+    
+}
