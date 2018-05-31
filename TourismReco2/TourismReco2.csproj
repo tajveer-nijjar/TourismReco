@@ -312,6 +312,10 @@
     <Compile Include="Migrations\201805311956065_RemovedDateTimeFromUserClanRegistration.Designer.cs">
       <DependentUpon>201805311956065_RemovedDateTimeFromUserClanRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805312122333_AddMoreItems.cs" />
+    <Compile Include="Migrations\201805312122333_AddMoreItems.Designer.cs">
+      <DependentUpon>201805312122333_AddMoreItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -706,6 +710,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805311956065_RemovedDateTimeFromUserClanRegistration.resx">
       <DependentUpon>201805311956065_RemovedDateTimeFromUserClanRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805312122333_AddMoreItems.resx">
+      <DependentUpon>201805312122333_AddMoreItems.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

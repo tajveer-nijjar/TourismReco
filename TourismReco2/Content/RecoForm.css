@@ -79,3 +79,28 @@
     margin-top: 20px;
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#show-selected-reco #dirs {
+    overflow: scroll;
+    border: 2px solid grey;
+}
+
+/*#select-clan-priority {*/
+/*    */
+/*}*/
