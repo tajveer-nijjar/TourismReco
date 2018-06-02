@@ -9,7 +9,16 @@ namespace TourismReco2
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                                "~/Scripts/BarRating/jquery.rateyo.min.js"
+
+                ));
+
+
+//            bundles.Add(new ScriptBundle("~/bundles/rating").Include(
+//                "~/Scripts/BarRating/jquery.rateyo.min.js",
+//                "~/Scripts/rating.js"
+//                ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -29,7 +38,7 @@ namespace TourismReco2
                       "~/Content/HomePage.css",
                       "~/Content/SelectClanPriority.css",
                       "~/Content/SelectSubClanPriority.css",
-                      
+                      "~/Content/BarRating/jquery.rateyo.min.css",
                       "~/Content/Site.css"));
         }
     }

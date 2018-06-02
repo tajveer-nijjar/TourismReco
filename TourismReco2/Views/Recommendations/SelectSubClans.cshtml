@@ -13,8 +13,6 @@
             {
                 <div class="reco_form_overlay">
 
-
-
                     @for (int i = 0; i < Model.Count;)
                     {
                         <div class="row">
@@ -25,7 +23,9 @@
                                 {
                                     @Html.HiddenFor(m => m[i].ClanId)
                                     @Html.HiddenFor(m => m[i].SubClans[j].SubClanId)
-                                    @Html.TextBoxFor(m => m[i].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })
+@*                                    @Html.Partial("_StarRating")*@
+                                <div id="rateYo"></div>
+@*                                    @Html.TextBoxFor(m => m[i].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })*@
                                     @Model[i].SubClans[j].SubClanName
                                     @Html.HiddenFor(m => m[i].UserId)
                                     <br />
@@ -34,19 +34,20 @@
 
                             @if (i + 1 <= Model.Count)
                             {
-                                <div class="col-md-5 col-md-push-1">
+                            <div class="col-md-5 col-md-push-1">
 
-                                    <h3>@Model[i + 1].ClanName</h3>
-                                    @for (int j = 0; j < Model[i + 1].SubClans.Count; j++)
-                                    {
-                                        @Html.HiddenFor(m => m[i + 1].ClanId)
-                                        @Html.HiddenFor(m => m[i + 1].SubClans[j].SubClanId)
-                                        @Html.TextBoxFor(m => m[i + 1].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })
-                                        @Model[i + 1].SubClans[j].SubClanName
-                                        @Html.HiddenFor(m => m[i + 1].UserId)
-                                        <br />
-                                    }
-                                </div>
+                                <h3>@Model[i + 1].ClanName</h3>
+                                @for (int j = 0; j < Model[i + 1].SubClans.Count; j++)
+                                {
+                                    @Html.HiddenFor(m => m[i + 1].ClanId)
+                                    @Html.HiddenFor(m => m[i + 1].SubClans[j].SubClanId)
+                                    <div id="rateYo"></div>
+@*                                    @Html.TextBoxFor(m => m[i + 1].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })*@
+                                    @Model[i + 1].SubClans[j].SubClanName
+                                    @Html.HiddenFor(m => m[i + 1].UserId)
+                                    <br />
+                                }
+                            </div>
 
                             }
                         </div>
@@ -58,3 +59,15 @@
         </div>
     </section>
 </div>
+
+<script>
+    
+        
+    
+    
+    
+
+       
+
+
+</script>

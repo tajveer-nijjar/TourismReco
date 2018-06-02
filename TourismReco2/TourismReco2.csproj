@@ -339,18 +339,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\BarRating\examples.js" />
-    <Content Include="Content\BarRating\jquery-1.11.2.min.js" />
-    <Content Include="Content\BarRating\themes\bars-1to10.css" />
-    <Content Include="Content\BarRating\themes\bars-horizontal.css" />
-    <Content Include="Content\BarRating\themes\bars-movie.css" />
-    <Content Include="Content\BarRating\themes\bars-pill.css" />
-    <Content Include="Content\BarRating\themes\bars-reversed.css" />
-    <Content Include="Content\BarRating\themes\bars-square.css" />
-    <Content Include="Content\BarRating\themes\bootstrap-stars.css" />
-    <Content Include="Content\BarRating\themes\css-stars.css" />
-    <Content Include="Content\BarRating\themes\fontawesome-stars-o.css" />
-    <Content Include="Content\BarRating\themes\fontawesome-stars.css" />
+    <Content Include="Content\BarRating\jquery.rateyo.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\animate.css" />
@@ -418,6 +407,7 @@
     <Content Include="Content\images\photo6.jpg" />
     <Content Include="Content\images\photo7.jpg" />
     <Content Include="Content\images\Preloader_2.gif" />
+    <Content Include="Content\images\single star.png" />
     <Content Include="Content\images\white_wave.png" />
     <Content Include="Content\images\white_wave_%402X.png" />
     <Content Include="Content\RecoForm.css" />
@@ -428,7 +418,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\BarRating\jquery.barrating.min.js" />
+    <Content Include="Scripts\BarRating\jquery.rateyo.js" />
+    <Content Include="Scripts\BarRating\jquery.rateyo.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\css\.DS_Store" />
@@ -565,6 +556,7 @@
     <Content Include="Scripts\js\modernizr-2.6.2.min.js" />
     <Content Include="Scripts\js\respond.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\rating.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -608,6 +600,7 @@
     <Content Include="Views\Recommendations\SelectClanPriority.cshtml" />
     <Content Include="Views\Recommendations\ShowRecommendations.cshtml" />
     <Content Include="Views\Recommendations\ShowSelectedRecommendations.cshtml" />
+    <Content Include="Views\Recommendations\_StarRating.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
