@@ -28,6 +28,7 @@ namespace TourismReco2
                       "~/Content/RecoForm.css",
                       "~/Content/HomePage.css",
                       "~/Content/SelectClanPriority.css",
+                      "~/Content/SelectSubClanPriority.css",
                       
                       "~/Content/Site.css"));
         }

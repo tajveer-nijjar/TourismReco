@@ -289,11 +289,15 @@ textarea {
     font-weight: 100;
 }
 
-#recommendationForm, #select-clan-priority {
+#recommendationForm,
+#select-clan-priority,
+#sub-clan-priority {
     margin-top: 50px;
 }
 
 
-    #recommendationForm .reco_form, #select-clan-priority .reco_form {
+    #recommendationForm .reco_form,
+    #select-clan-priority .reco_form,
+    #sub-clan-priority .reco_form{
         margin-top: 0;
     }
