@@ -284,3 +284,16 @@ textarea {
     }
 
 
+.container h2 {
+    padding-left: 10px;
+    font-weight: 100;
+}
+
+#recommendationForm, #select-clan-priority {
+    margin-top: 50px;
+}
+
+
+    #recommendationForm .reco_form, #select-clan-priority .reco_form {
+        margin-top: 0;
+    }
