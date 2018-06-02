@@ -176,6 +176,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HelperClasses\GoogleAddressSearch.cs" />
+    <Compile Include="HelperClasses\TSP.cs" />
     <Compile Include="Migrations\201710312207316_initial_migration.cs" />
     <Compile Include="Migrations\201710312207316_initial_migration.Designer.cs">
       <DependentUpon>201710312207316_initial_migration.cs</DependentUpon>

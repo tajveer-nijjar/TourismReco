@@ -20,7 +20,7 @@
 
 
                     <li class="list-group-item">
-                        @Html.CheckBoxFor(r => r[i].ChosenByUser) &nbsp; &nbsp; &nbsp;
+@*                        @Html.CheckBoxFor(r => r[i].ChosenByUser) &nbsp; &nbsp; &nbsp;*@
                         @Model[i].Item.ItemName | @Model[i].CalcultedWeight
                         @Html.HiddenFor(r => r[i].ItemId)
                         @Html.HiddenFor(r => r[i].UserId)
