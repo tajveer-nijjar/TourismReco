@@ -1,3 +1,44 @@
-﻿#select-clan-priority {
-    
+﻿#select-clan-priority .reco_form {
 }
+
+    #select-clan-priority .reco_form .priorityContent {
+        position: relative;
+        margin-bottom: 40px;
+    }
+
+#select-clan-priority .priority-box {
+    height: 100px;
+    width: 100px;
+    border: 1px solid red;
+    position: absolute;
+    top: 0;
+}
+
+#select-clan-priority .low {
+}
+
+#select-clan-priority .medium {
+    left: 110px;
+}
+
+#select-clan-priority .high {
+    left: 220px;
+}
+
+#select-clan-priority label {
+    /*    position: absolute;*/
+    /*    top: 0;*/
+}
+
+#select-clan-priority .priority-box {
+    position: absolute;
+    top: 0;
+}
+
+    #select-clan-priority .priority-box input {
+        display: inline-block;
+    }
+
+    #select-clan-priority .priority-box .radioButtonText {
+        display: inline-block;
+    }
