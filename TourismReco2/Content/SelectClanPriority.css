@@ -4,25 +4,36 @@
     #select-clan-priority .reco_form .priorityContent {
         position: relative;
         margin-bottom: 40px;
+        margin-top: 20px;
+        border-bottom: 1px solid #85919D;
+        height: auto;
+        padding-bottom: 40px;
     }
+
+#select-clan-priority p.subClanTitle {
+    font-weight: 800;
+}
+
 
 #select-clan-priority .priority-box {
     height: 100px;
     width: 100px;
-    border: 1px solid red;
     position: absolute;
-    top: 0;
+    top: 50px;
 }
 
 #select-clan-priority .low {
+    font-weight: 100;
 }
 
 #select-clan-priority .medium {
     left: 110px;
+    font-weight: 100;
 }
 
 #select-clan-priority .high {
     left: 220px;
+    font-weight: 100;
 }
 
 #select-clan-priority label {
@@ -30,15 +41,18 @@
     /*    top: 0;*/
 }
 
-#select-clan-priority .priority-box {
-    position: absolute;
-    top: 0;
-}
+/*#select-clan-priority .priority-box {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*}*/
 
     #select-clan-priority .priority-box input {
-        display: inline-block;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
     }
 
     #select-clan-priority .priority-box .radioButtonText {
-        display: inline-block;
+        display: block;
+        text-align: center;
     }

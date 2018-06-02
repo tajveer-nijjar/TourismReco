@@ -19,36 +19,34 @@
                 {
                     for (int i = 0; i < Model.Count; i++)
                     {
-                        @Model[i].ClanName <br />
-
-                        @Html.HiddenFor(m => m[i].ClanId)
-                        @Html.HiddenFor(m => m[i].ClanName)
-                        @Html.HiddenFor(m => m[i].UserId)
-
-
                         <div class="priorityContent">
+                            <p class="subClanTitle"> @Model[i].ClanName </p>
+                            @Html.HiddenFor(m => m[i].ClanId)
+                            @Html.HiddenFor(m => m[i].ClanName)
+                            @Html.HiddenFor(m => m[i].UserId)
+
+
                             <label>
                                 <div class="priority-box low">
-                                    @Html.RadioButtonFor(m => m[i].ClanPreference, "1")<br />
+                                    @Html.RadioButtonFor(m => m[i].ClanPreference, "1")
                                     <span class="radioButtonText">Low Priority</span>
                                 </div>
                             </label>
                             <label>
                                 <div class="priority-box medium">
-                                    @Html.RadioButtonFor(m => m[i].ClanPreference, "2")<br />
+                                    @Html.RadioButtonFor(m => m[i].ClanPreference, "2")
                                     <span class="radioButtonText">Medium Priority</span>
                                 </div>
                             </label>
 
                             <label>
                                 <div class="priority-box high">
-                                    @Html.RadioButtonFor(m => m[i].ClanPreference, "3")<br />
+                                    @Html.RadioButtonFor(m => m[i].ClanPreference, "3")
                                     <span class="radioButtonText">High Priority</span>
                                 </div>
                             </label>
                         </div>
 
-                        <br /><br />
                     }
 
                     <button type="submit" class="btn btn-primary">Submit</button>
