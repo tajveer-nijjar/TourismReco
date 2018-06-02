@@ -244,7 +244,7 @@ textarea {
 
 .navbar {
     background: rgba(141, 197, 63, .7);
-    height: 100px !important;
+    height: 80px !important;
     color: white !important;
     margin-bottom: 0 !important;
 }
@@ -258,9 +258,12 @@ textarea {
 }
 
 .navbar h1#header-logo {
-    margin-top: 30px;
+    margin-top: 15px;
     text-align: center;
     display: inline-block;
+    font-weight: 100;
+    color: white !important;
+    z-index: 100;
 }
 
     .navbar h1#header-logo a {
@@ -273,7 +276,7 @@ textarea {
 
 
 .navbar .right-menu {
-    margin-top: 30px !important;
+    margin-top: 15px !important;
 }
 
     .navbar .right-menu .nav li a {

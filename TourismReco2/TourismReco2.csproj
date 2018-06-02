@@ -376,6 +376,12 @@
     <Content Include="Content\fonts\icomoon\icomoon\Read Me.txt" />
     <Content Include="Content\fonts\icomoon\icomoon\style.css" />
     <Content Include="Content\fonts\simple-line-icons\Simple-Line-Icons.svg" />
+    <Content Include="Content\HomePage.css" />
+    <Content Include="Content\images\adventure.jpg" />
+    <Content Include="Content\images\art.jpg" />
+    <Content Include="Content\images\family.jpg" />
+    <Content Include="Content\images\food.jpg" />
+    <Content Include="Content\images\history.jpg" />
     <Content Include="Content\images\img_beach.jpg" />
     <Content Include="Content\images\img_walkingTracks.jpg" />
     <Content Include="Content\images\img_cafe.jpg" />
@@ -392,7 +398,10 @@
     <Content Include="Content\images\img_5.jpg" />
     <Content Include="Content\images\img_6.jpg" />
     <Content Include="Content\images\img_devices.png" />
+    <Content Include="Content\images\luxury.jpg" />
     <Content Include="Content\images\macbook.png" />
+    <Content Include="Content\images\nature.jpg" />
+    <Content Include="Content\images\nightlife.jpg" />
     <Content Include="Content\images\person1.jpg" />
     <Content Include="Content\images\person2.jpg" />
     <Content Include="Content\images\person3.jpg" />

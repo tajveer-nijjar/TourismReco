@@ -1,0 +1,22 @@
+﻿#home h2 {
+    font-size: 50px !important;
+    margin-top: 50px !important;
+}
+
+#home p.intro-text {
+    color: white;
+}
+
+#home .text {
+    color: white !important;
+    font-size: 24px;
+}
+
+#home .fh5co-intro-text .fh5co-left-position {
+    margin-top: -200px;
+}
+
+
+#fh5co-projects {
+    padding-top: 50px !important;
+}
