@@ -6,20 +6,18 @@
 
 }
 
-<h2>@*Enter following form for SaveSelectedClans*@</h2>
 
 <div id="recommendationForm">
     <section id="fh5co-hero" class="js-fullheight" @*style="background-image: url(/Content/images/hero3.jpg);"*@ data-next="yes">
         @*<div class="fh5co-overlay"></div>*@
         <div class="container">
+            <h2>Select your affiliation to clans</h2>
+
             <div class="fh5co-intro js-fullheight">
 
                 @using (Html.BeginForm("SaveSelectedClans", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
                 {
-
                     <div class="row">
-
-
                         @for (int i = 0; i < Model.Clans.Count; i++)
                         {
                             <div class="col-md-3 clan background-@i">
@@ -37,11 +35,8 @@
                         }
 
                         @Html.HiddenFor(m => m.UserId)
-
-
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-
                 }
             </div>
         </div>
