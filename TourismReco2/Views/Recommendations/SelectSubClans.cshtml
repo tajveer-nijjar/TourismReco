@@ -23,9 +23,46 @@
                                 {
                                     @Html.HiddenFor(m => m[i].ClanId)
                                     @Html.HiddenFor(m => m[i].SubClans[j].SubClanId)
-@*                                    @Html.Partial("_StarRating")*@
-                                <div id="rateYo"></div>
-@*                                    @Html.TextBoxFor(m => m[i].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })*@
+                                    @*                                    <div id="rateYo" class="rateYoFor_@i@j"></div>*@
+                                    @*                                    @Html.TextBoxFor(m => m[i].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })*@
+
+                                    @*                                    @Html.Partial("_StarRating", Model[i].SubClans[j]);*@
+
+                                    <div class="subClanPriorityContent">
+                                        <label>
+                                            <div class="priority-box">
+                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "1")
+                                                <span class="radioButtonText">1</span>
+                                            </div>
+                                        </label>
+                                        <label>
+                                            <div class="priority-box">
+                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "2")
+                                                <span class="radioButtonText">2</span>
+                                            </div>
+                                        </label>
+
+                                        <label>
+                                            <div class="priority-box">
+                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "3")
+                                                <span class="radioButtonText">3</span>
+                                            </div>
+                                        </label>
+
+                                        <label>
+                                            <div class="priority-box">
+                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "4")
+                                                <span class="radioButtonText">4</span>
+                                            </div>
+                                        </label>
+
+                                        <label>
+                                            <div class="priority-box">
+                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "5")
+                                                <span class="radioButtonText">5</span>
+                                            </div>
+                                        </label>
+                                    </div>
                                     @Model[i].SubClans[j].SubClanName
                                     @Html.HiddenFor(m => m[i].UserId)
                                     <br />
@@ -41,8 +78,45 @@
                                 {
                                     @Html.HiddenFor(m => m[i + 1].ClanId)
                                     @Html.HiddenFor(m => m[i + 1].SubClans[j].SubClanId)
-                                    <div id="rateYo"></div>
-@*                                    @Html.TextBoxFor(m => m[i + 1].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })*@
+                                    @*                                        <div id="rateYo" class="rateYoFor_@j"></div>*@
+                                    @*                                    @Html.TextBoxFor(m => m[i + 1].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })*@
+
+                                    <div class="subClanPriorityContent">
+                                        <label>
+                                            <div class="priority-box">
+                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "1")
+                                                <span class="radioButtonText">1</span>
+                                            </div>
+                                        </label>
+                                        <label>
+                                            <div class="priority-box">
+                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "2")
+                                                <span class="radioButtonText">2</span>
+                                            </div>
+                                        </label>
+
+                                        <label>
+                                            <div class="priority-box">
+                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "3")
+                                                <span class="radioButtonText">3</span>
+                                            </div>
+                                        </label>
+
+                                        <label>
+                                            <div class="priority-box">
+                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "4")
+                                                <span class="radioButtonText">4</span>
+                                            </div>
+                                        </label>
+
+                                        <label>
+                                            <div class="priority-box">
+                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "5")
+                                                <span class="radioButtonText">5</span>
+                                            </div>
+                                        </label>
+                                    </div>
+
                                     @Model[i + 1].SubClans[j].SubClanName
                                     @Html.HiddenFor(m => m[i + 1].UserId)
                                     <br />
@@ -59,15 +133,41 @@
         </div>
     </section>
 </div>
+<script src="/Scripts/js/jquery.min.js"></script>
+<!-- RateYo! -->
+<script src="/Scripts/BarRating/jquery.rateyo.min.js"></script>
 
 <script>
-    
-        
-    
-    
-    
 
-       
+    $(document).ready(function () {
+
+//        $(".row #rateYo").rateYo({
+//            //            starWidth: "20px",
+//            rating: 2,
+//            fullStar: true
+//        });
+//        var $rateYo = $("#rateYo").rateYo();
+//        var rating = $rateYo.rateYo("rating");
+//
+//        $('<input>').attr({
+//            type: 'hidden',
+//            id: 'foo',
+//            name: rating
+//        }).appendTo('form');
+
+        var radioButtons = $("[type='radio']");
+
+        for (var i = 0; i < radioButtons.length; i++) {
+            radioButtons[i].checked = false;
+        }
+
+
+    });
+
+
+
+
+
 
 
 </script>

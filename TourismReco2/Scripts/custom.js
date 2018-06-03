@@ -1,10 +1,8 @@
 ﻿$(document).ready(function () {
 
-    $(".row #rateYo").rateYo({
-        starWidth: "40px"
-    });
 
-    
+
+
     $("input[name=includeRoute]").change(function () {
         var x = $("#weatherInformation");
         //if ($("#planRouteYes").prop("checked", true)) {
