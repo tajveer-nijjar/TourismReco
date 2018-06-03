@@ -205,8 +205,10 @@ namespace TourismReco2.Controllers
             return View("ShowRecommendations", viewModel);
         }
 
-        public async Task<ActionResult> ShowSelectedRecommendations(ShowRecommendationsViewModel viewModel)
+        public async Task<ActionResult> SaveAndShowSelectedRecommendations(ShowRecommendationsViewModel viewModel)
         {
+            var allFinalRecommendations = _context.SelectedRecommendations.ToList();
+            
             var recommendations = new List<CalculatedRecommendation>();
             foreach (var recommendation in viewModel.CalculatedRecommendations)
             {
@@ -226,21 +228,27 @@ namespace TourismReco2.Controllers
                             UserId = recommendation.UserId
                         };
 
-                        
+                        var ifPresent = allFinalRecommendations
+                            .Any(r => r.ItemId == recommendation.ItemId && r.UserId == User.Identity.GetUserId());
 
-                        _context.SelectedRecommendations.Add(selectedRecommendation);
-                        _selectedRecommendations.Add(selectedRecommendation);
+                        if (!ifPresent)
+                        {
+                            _context.SelectedRecommendations.Add(selectedRecommendation);
+                            _selectedRecommendations.Add(selectedRecommendation);
+                        }
                     }
                 }
             }
-
 
             await FillDataWithItems();
 
             _context.SaveChanges();
 
-
-            return View(_selectedRecommendations);
+            //Retreiving all the recommendations for the user to be displayed.
+            var userId = User.Identity.GetUserId();
+            var finalRecommendations = _context.SelectedRecommendations.Where(r => r.UserId == userId).ToList();
+            
+            return View(finalRecommendations);
         }
 
 

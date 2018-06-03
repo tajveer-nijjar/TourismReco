@@ -13,10 +13,10 @@
         <div class="container">
             <h2>Select chosen destinations</h2>
 
-            @using (Html.BeginForm("ShowSelectedRecommendations", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
+            @using (Html.BeginForm("SaveAndShowSelectedRecommendations", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
             {
                 <div class="container">
-                    <div class="fh5co-intro js-fullheight">
+                    <div class="fh5co-intro">
 
 
                         <ol type="I" class="list-group">

@@ -14,9 +14,9 @@
     
 }
 
-/*#sub-clan-priority .subClanPriorityContent .priority-box {*/
-/*    background: white;*/
-/*}*/
+    #sub-clan-priority .subClanPriorityContent .priority-box {
+        padding: 0 20px;
+    }
 
     #sub-clan-priority .subClanPriorityContent .priority-box input {
         display: block;

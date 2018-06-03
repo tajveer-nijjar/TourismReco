@@ -601,7 +601,7 @@
     <Content Include="Views\Recommendations\SelectSubClans.cshtml" />
     <Content Include="Views\Recommendations\SelectClanPriority.cshtml" />
     <Content Include="Views\Recommendations\ShowRecommendations.cshtml" />
-    <Content Include="Views\Recommendations\ShowSelectedRecommendations.cshtml" />
+    <Content Include="Views\Recommendations\SaveAndShowSelectedRecommendations.cshtml" />
     <Content Include="Views\Recommendations\_StarRating.cshtml" />
   </ItemGroup>
   <ItemGroup>
