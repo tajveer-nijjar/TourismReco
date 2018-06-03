@@ -16,7 +16,7 @@
                     @for (int i = 0; i < Model.Count;)
                     {
                         <div class="row">
-                            <div class="col-md-5 col-md-push-1">
+                            <div class="col-md-5 col-md-push-1 animate-box">
                                 <h3>@Model[i].ClanName</h3>
 
                                 @for (int j = 0; j < Model[i].SubClans.Count; j++)
@@ -31,7 +31,7 @@
 
                                     @*                                    @Html.Partial("_StarRating", Model[i].SubClans[j]);*@
 
-                                    <div class="subClanPriorityContent">
+                                    <div class="subClanPriorityContent animate-box">
                                         <label>
                                             <div class="priority-box">
                                                 @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "1")
@@ -72,7 +72,7 @@
 
                             @if (i + 1 < Model.Count)
                             {
-                            <div class="col-md-5 col-md-push-1">
+                            <div class="col-md-5 col-md-push-1 animate-box">
 
                                 <h3>@Model[i + 1].ClanName</h3>
                                 @for (int j = 0; j < Model[i + 1].SubClans.Count; j++)
@@ -85,7 +85,7 @@
                                     @*                                        <div id="rateYo" class="rateYoFor_@j"></div>*@
                                     @*                                    @Html.TextBoxFor(m => m[i + 1].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })*@
 
-                                    <div class="subClanPriorityContent">
+                                    <div class="subClanPriorityContent animate-box">
                                         <label>
                                             <div class="priority-box">
                                                 @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "1")

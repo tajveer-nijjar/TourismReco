@@ -149,6 +149,7 @@ namespace TourismReco2.Controllers
             var subClansInDb = _context.SubClans.ToList();
             var clansInDb = _context.Clans.ToList();
             var registeredClans = new List<Clan>();
+            var allSubClanPriorityRegistrations = _context.SubClanPriorityRegistrations.ToList();
 
             //Adding ClanPreference values that are stored in the database to the "clans" list.
             foreach (var clanRegisteration in userClanRegistrations)
@@ -186,7 +187,12 @@ namespace TourismReco2.Controllers
                         PriorityLevel = clan.ClanPreference * subClan.SubClanPriority
                     };
 
-                    _context.SubClanPriorityRegistrations.Add(subClanPriorityRegistration);
+                    var isPresent = allSubClanPriorityRegistrations.Any(r =>
+                        r.UserId == User.Identity.GetUserId() && r.SubClanId == subClan.SubClanId);
+                    if (!isPresent)
+                    {
+                        _context.SubClanPriorityRegistrations.Add(subClanPriorityRegistration);
+                    }
                 }
             }
 

@@ -411,6 +411,7 @@
     <Content Include="Content\images\white_wave.png" />
     <Content Include="Content\images\white_wave_%402X.png" />
     <Content Include="Content\RecoForm.css" />
+    <Content Include="Content\ShowRecommendations.css" />
     <Content Include="Content\SelectSubClanPriority.css" />
     <Content Include="Content\SelectClanPriority.css" />
     <Content Include="Content\style.css" />

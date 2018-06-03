@@ -8,31 +8,25 @@
 
 @*apikey = AIzaSyBGJRPRHqGo5aORter8h37s7ez8QPt0VFY*@
 
-<div id="fh5co-page">
+<div id="show-generated-recommendations">
+    <section id="fh5co-hero" class="js-fullheight" data-next="yes">
+        <div class="container">
+            <h2>Select chosen destinations</h2>
 
-    @using (Html.BeginForm("ShowSelectedRecommendations", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
-    {
-        <section id="fh5co-hero" class="js-fullheight" data-next="yes">
-            <div class="container">
-                <div class="fh5co-intro js-fullheight">
-
-                    <div class="recommendations_page">
-                        <h2>Following are the suggested Destinations for you.</h2>
+            @using (Html.BeginForm("ShowSelectedRecommendations", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
+            {
+                <div class="container">
+                    <div class="fh5co-intro js-fullheight">
 
 
-                        @*                    <iframe width="100%"*@
-                        @*                            height="450"*@
-                        @*                            frameborder="0" style="border:0"*@
-                        @*                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBGJRPRHqGo5aORter8h37s7ez8QPt0VFY*@
-                        @*    &q=Southland,New+Zealand" allowfullscreen></iframe>*@
-
-                        <ul class="list-group">
+                        <ol type="I" class="list-group">
 
                             @for (int i = 0; i < Model.CalculatedRecommendations.Count; i++)
                             {
-                                <li class="list-group-item">
+                                <li class="list-group-item animate-box">
                                     @Html.CheckBoxFor(r => r.CalculatedRecommendations[i].ChosenByUser) &nbsp; &nbsp; &nbsp;
-                                    @Model.CalculatedRecommendations[i].Item.ItemName | @Model.CalculatedRecommendations[i].CalcultedWeight
+                                    <strong>@Model.CalculatedRecommendations[i].Item.ItemName </strong>
+                                    | <span class="recommendationWeight">Calculated Weight: @Model.CalculatedRecommendations[i].CalcultedWeight</span>
 
                                     @Html.HiddenFor(r => r.CalculatedRecommendations[i].ItemId)
                                     @Html.HiddenFor(r => r.CalculatedRecommendations[i].Item)
@@ -42,11 +36,12 @@
 
                             }
 
-                        </ul>
+                        </ol>
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </section>
-    }
+            }
+
+        </div>
+    </section>
 </div>

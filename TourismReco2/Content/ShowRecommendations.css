@@ -1,0 +1,8 @@
+﻿#show-generated-recommendations ol{
+    list-style-type: decimal !important;
+    list-style-position: inside;
+}
+
+#show-generated-recommendations .list-group .list-group-item {
+    display: list-item;
+}

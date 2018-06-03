@@ -4,10 +4,10 @@
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {*/
     /*padding-left: 15px;
     padding-right: 15px;*/
-}
+/*}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -37,10 +37,10 @@ textarea {
 }
 
 
-#fh5co-header {
+/*#fh5co-header {*/
     /*padding: 0 !important;
     margin: 0 !important;*/
-}
+/*}*/
 
 
 /*Template CSS*/
@@ -291,13 +291,15 @@ textarea {
 
 #recommendationForm,
 #select-clan-priority,
-#sub-clan-priority {
+#sub-clan-priority,
+#show-generated-recommendations {
     margin-top: 50px;
 }
 
 
     #recommendationForm .reco_form,
     #select-clan-priority .reco_form,
-    #sub-clan-priority .reco_form{
+    #sub-clan-priority .reco_form,
+    #show-generated-recommendations .reco_form {
         margin-top: 0;
     }
