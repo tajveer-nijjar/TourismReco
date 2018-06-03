@@ -8,3 +8,16 @@
 /*/*    height: 20px;!1!*/
 /*/*    border: 1px solid red;!1!*/
 /*}*/
+
+#sub-clan-priority .subClanPriorityContent {
+    border-bottom: 1px solid #484C50;
+    
+}
+
+#sub-clan-priority .subClanPriorityContent .priority-box {
+/*    background: white;*/
+}
+
+    #sub-clan-priority .subClanPriorityContent .priority-box input {
+        display: block;
+    }
