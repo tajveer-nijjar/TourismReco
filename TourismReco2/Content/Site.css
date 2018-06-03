@@ -284,7 +284,7 @@ textarea {
     }
 
 
-.container h2 {
+.container h2, .container-fluid h2 {
     padding-left: 10px;
     font-weight: 100;
 }
@@ -292,7 +292,8 @@ textarea {
 #recommendationForm,
 #select-clan-priority,
 #sub-clan-priority,
-#show-generated-recommendations {
+#show-generated-recommendations,
+#show-selected-reco {
     margin-top: 50px;
 }
 
@@ -300,6 +301,7 @@ textarea {
     #recommendationForm .reco_form,
     #select-clan-priority .reco_form,
     #sub-clan-priority .reco_form,
-    #show-generated-recommendations .reco_form {
+    #show-generated-recommendations .reco_form,
+    #show-selected-reco .reco_form {
         margin-top: 0;
     }

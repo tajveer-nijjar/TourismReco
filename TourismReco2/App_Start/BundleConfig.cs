@@ -39,6 +39,7 @@ namespace TourismReco2
                       "~/Content/SelectClanPriority.css",
                       "~/Content/SelectSubClanPriority.css",
                       "~/Content/ShowRecommendations.css",
+                      "~/Content/ShowSelectedRecommendations.css",
                       "~/Content/BarRating/jquery.rateyo.min.css",
                       "~/Content/Site.css"));
         }

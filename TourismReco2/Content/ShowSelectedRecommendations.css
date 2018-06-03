@@ -1,0 +1,23 @@
+﻿#show-selected-reco ol.list-group {
+    display: inline-block;
+    border: 1px solid #796E5F;
+}
+
+
+#map_canvas {
+    width: 100%;
+    border: 1px solid #796E5F;
+}
+
+#show-selected-reco ol {
+    list-style-type: decimal !important;
+    list-style-position: inside;
+}
+
+#show-selected-reco .list-group .list-group-item {
+    display: list-item;
+}
+
+#show-selected-reco #dirs {
+    border: 1px solid #796E5F;
+}

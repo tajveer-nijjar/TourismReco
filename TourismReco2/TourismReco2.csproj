@@ -414,6 +414,7 @@
     <Content Include="Content\ShowRecommendations.css" />
     <Content Include="Content\SelectSubClanPriority.css" />
     <Content Include="Content\SelectClanPriority.css" />
+    <Content Include="Content\ShowSelectedRecommendations.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
