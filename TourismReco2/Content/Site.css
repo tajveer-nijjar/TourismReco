@@ -3,6 +3,10 @@
     padding-bottom: 20px;
 }
 
+body::selection {
+    background: #ffb7b7;
+}
+
 /* Set padding to keep content from hitting the edges */
 /*.body-content {*/
     /*padding-left: 15px;
@@ -288,6 +292,9 @@ textarea {
     padding-left: 10px;
     font-weight: 100;
 }
+
+
+
 
 #recommendationForm,
 #select-clan-priority,

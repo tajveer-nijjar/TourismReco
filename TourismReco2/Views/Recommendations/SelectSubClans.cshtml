@@ -66,66 +66,67 @@
                                             </div>
                                         </label>
                                     </div>
-                                   
+
                                 }
                             </div>
 
                             @if (i + 1 < Model.Count)
                             {
-                            <div class="col-md-5 col-md-push-1 animate-box">
+                                <div class="col-md-5 col-md-push-1 animate-box">
 
-                                <h3>@Model[i + 1].ClanName</h3>
-                                @for (int j = 0; j < Model[i + 1].SubClans.Count; j++)
-                                {
-                                    @Html.HiddenFor(m => m[i + 1].ClanId)
-                                    @Html.HiddenFor(m => m[i + 1].ClanName)
-                                    @Html.HiddenFor(m => m[i + 1].SubClans[j].SubClanId)
-                                    @Model[i + 1].SubClans[j].SubClanName
-                                    @Html.HiddenFor(m => m[i + 1].UserId)
-                                    @*                                        <div id="rateYo" class="rateYoFor_@j"></div>*@
-                                    @*                                    @Html.TextBoxFor(m => m[i + 1].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })*@
+                                    <h3>@Model[i + 1].ClanName</h3>
+                                    @for (int j = 0; j < Model[i + 1].SubClans.Count; j++)
+                                    {
+                                        @Html.HiddenFor(m => m[i + 1].ClanId)
+                                        @Html.HiddenFor(m => m[i + 1].ClanName)
+                                        @Html.HiddenFor(m => m[i + 1].SubClans[j].SubClanId)
+                                        @Model[i + 1].SubClans[j].SubClanName
+                                        @Html.HiddenFor(m => m[i + 1].UserId)
+                                        @*                                        <div id="rateYo" class="rateYoFor_@j"></div>*@
+                                        @*                                    @Html.TextBoxFor(m => m[i + 1].SubClans[j].SubClanPriority, new { @class = "form-control small_textbox", Value = " " })*@
 
-                                    <div class="subClanPriorityContent animate-box">
-                                        <label>
-                                            <div class="priority-box">
-                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "1")
-                                                <span class="radioButtonText">1</span>
-                                            </div>
-                                        </label>
-                                        <label>
-                                            <div class="priority-box">
-                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "2")
-                                                <span class="radioButtonText">2</span>
-                                            </div>
-                                        </label>
+                                        <div class="subClanPriorityContent animate-box">
+                                            <label>
+                                                <div class="priority-box">
+                                                    @Html.RadioButtonFor(m => m[i+1].SubClans[j].SubClanPriority, "1")
+                                                    <span class="radioButtonText">1</span>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <div class="priority-box">
+                                                    @Html.RadioButtonFor(m => m[i + 1].SubClans[j].SubClanPriority, "2")
+                                                    <span class="radioButtonText">2</span>
+                                                </div>
+                                            </label>
 
-                                        <label>
-                                            <div class="priority-box">
-                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "3")
-                                                <span class="radioButtonText">3</span>
-                                            </div>
-                                        </label>
+                                            <label>
+                                                <div class="priority-box">
+                                                    @Html.RadioButtonFor(m => m[i + 1].SubClans[j].SubClanPriority, "3")
+                                                    <span class="radioButtonText">3</span>
+                                                </div>
+                                            </label>
 
-                                        <label>
-                                            <div class="priority-box">
-                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "4")
-                                                <span class="radioButtonText">4</span>
-                                            </div>
-                                        </label>
+                                            <label>
+                                                <div class="priority-box">
+                                                    @Html.RadioButtonFor(m => m[i + 1].SubClans[j].SubClanPriority, "4")
+                                                    <span class="radioButtonText">4</span>
+                                                </div>
+                                            </label>
 
-                                        <label>
-                                            <div class="priority-box">
-                                                @Html.RadioButtonFor(m => m[i].SubClans[j].SubClanPriority, "5")
-                                                <span class="radioButtonText">5</span>
-                                            </div>
-                                        </label>
-                                    </div>
+                                            <label>
+                                                <div class="priority-box">
+                                                    @Html.RadioButtonFor(m => m[i + 1].SubClans[j].SubClanPriority, "5")
+                                                    <span class="radioButtonText">5</span>
+                                                </div>
+                                            </label>
+                                        </div>
 
 
-                                }
-                            </div>
+                                    }
+                                </div>
 
                             }
+
                         </div>
                         i = i + 2;
                     }
@@ -143,19 +144,19 @@
 
     $(document).ready(function () {
 
-//        $(".row #rateYo").rateYo({
-//            //            starWidth: "20px",
-//            rating: 2,
-//            fullStar: true
-//        });
-//        var $rateYo = $("#rateYo").rateYo();
-//        var rating = $rateYo.rateYo("rating");
-//
-//        $('<input>').attr({
-//            type: 'hidden',
-//            id: 'foo',
-//            name: rating
-//        }).appendTo('form');
+        //        $(".row #rateYo").rateYo({
+        //            //            starWidth: "20px",
+        //            rating: 2,
+        //            fullStar: true
+        //        });
+        //        var $rateYo = $("#rateYo").rateYo();
+        //        var rating = $rateYo.rateYo("rating");
+        //
+        //        $('<input>').attr({
+        //            type: 'hidden',
+        //            id: 'foo',
+        //            name: rating
+        //        }).appendTo('form');
 
         var radioButtons = $("[type='radio']");
 
