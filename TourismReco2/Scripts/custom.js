@@ -1,8 +1,5 @@
 ﻿$(document).ready(function () {
 
-
-
-
     $("input[name=includeRoute]").change(function () {
         var x = $("#weatherInformation");
         //if ($("#planRouteYes").prop("checked", true)) {
@@ -13,6 +10,17 @@
         }
 
     });
+
+    var x = $('#accordion .panel-collapse');
+
+    for (var i = 0; i < x.length; i++) {
+        x[i].collapse('toggle');
+    }
+    
+//    $('#accordion .panel-default').on('click', function () {
+//        .collapse('toggle');
+//    });    
+
 });
 
 
