@@ -4,6 +4,14 @@
     width: 100%;
 }
 
+#show-selected-reco .startAgain {
+    margin-left: 20px !important;
+}
+
+#show-selected-reco h2 {
+    margin-left: 10px !important;
+}
+
 
 #map_canvas {
     width: 100%;
@@ -36,6 +44,9 @@
     float: right; /* adjust as needed */
     color: grey; /* adjust as needed */
 }
+
+
+
 
 .panel-heading .accordion-toggle.collapsed:after {
     /* symbol for "collapsed" panels */
