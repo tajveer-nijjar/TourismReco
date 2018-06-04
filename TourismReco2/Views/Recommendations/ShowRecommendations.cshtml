@@ -15,31 +15,54 @@
 
             @using (Html.BeginForm("SaveAndShowSelectedRecommendations", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
             {
-                <div class="container">
-                    <div class="fh5co-intro">
+                <div class="fh5co-intro">
+
+                    <div class="row">
+                        <div class="panel-group" id="accordion">
+
+                            <ol type="I" class="list-group">
+
+                                @for (int i = 0; i < Model.CalculatedRecommendations.Count; i++)
+                                {
+                                    <div class="panel panel-default">
+                                        <li class="list-group-item animate-box">
+                                            <div class="panel-heading">
+
+                                                @Html.CheckBoxFor(r => r.CalculatedRecommendations[i].ChosenByUser) &nbsp; &nbsp; &nbsp;
+
+                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-@i">
+
+                                                    <strong>@Model.CalculatedRecommendations[i].Item.ItemName </strong>
+                                                    | <span class="recommendationWeight">Calculated Weight: @Model.CalculatedRecommendations[i].CalcultedWeight</span>
+                                                </a>
+                                                @Html.HiddenFor(r => r.CalculatedRecommendations[i].ItemId)
+                                                @Html.HiddenFor(r => r.CalculatedRecommendations[i].Item)
+                                                @Html.HiddenFor(r => r.CalculatedRecommendations[i].UserId)
+                                                @*                                    @Html.HiddenFor(r => r.CalculatedRecommendations[i].ChosenByUser)*@
+                                            </div>
+                                            <div id="collapse-@i" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <p class="itemAddress">
+                                                        @Model.CalculatedRecommendations[i].Item.ItemAddress
+                                                    </p>
+                                                    <p class="itemRating">
+                                                        <strong>TripAdvisor rating: @Model.CalculatedRecommendations[i].Item.ItemRating</strong>
+                                                    </p>
+                                                </div>
+                                            </div>
 
 
-                        <ol type="I" class="list-group">
+                                        </li>
 
-                            @for (int i = 0; i < Model.CalculatedRecommendations.Count; i++)
-                            {
-                                <li class="list-group-item animate-box">
-                                    @Html.CheckBoxFor(r => r.CalculatedRecommendations[i].ChosenByUser) &nbsp; &nbsp; &nbsp;
-                                    <strong>@Model.CalculatedRecommendations[i].Item.ItemName </strong>
-                                    | <span class="recommendationWeight">Calculated Weight: @Model.CalculatedRecommendations[i].CalcultedWeight</span>
 
-                                    @Html.HiddenFor(r => r.CalculatedRecommendations[i].ItemId)
-                                    @Html.HiddenFor(r => r.CalculatedRecommendations[i].Item)
-                                    @Html.HiddenFor(r => r.CalculatedRecommendations[i].UserId)
-                                    @*                                    @Html.HiddenFor(r => r.CalculatedRecommendations[i].ChosenByUser)*@
-                                </li>
+                                    </div>
+                                }
 
-                            }
-
-                        </ol>
+                            </ol>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             }
 
         </div>
