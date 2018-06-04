@@ -26,10 +26,10 @@ namespace TourismReco2.Controllers
             _calculatedRecommendation = new CalculatedRecommendation();
         }
 
-//        protected override void Dispose(bool disposing)
-//        {
-//            _context.Dispose();
-//        }
+        //        protected override void Dispose(bool disposing)
+        //        {
+        //            _context.Dispose();
+        //        }
 
         [Authorize]
         public ActionResult RecommendationsForm()
@@ -54,24 +54,32 @@ namespace TourismReco2.Controllers
 
             //Fetching already selected clans against this user:
             var userClans = _context.UserClanRegisterations.Where(u => u.UserId == currentUserId).ToList();
-
+            
+            //Removing earlier present UserClanRegistrations
+            _context.UserClanRegisterations.RemoveRange(userClans);
+            
             foreach (var clan in checkedClans)
             {
                 var userClanRegistration = new UserClanRegisteration()
                 {
                     ClanId = clan.ClanId,
-                    UserId = currentUserId
+                    UserId = currentUserId,
+                    DateTimeDayOfTheYear = DateTime.Now.DayOfYear
                 };
 
+                _context.UserClanRegisterations.Add(userClanRegistration);
+
                 //Checking if user already registered to the clan.
-                var x = userClans.FirstOrDefault(uc => uc.UserId == currentUserId && uc.ClanId == clan.ClanId);
-                if (x == null)
-                {
-                    _context.UserClanRegisterations.Add(userClanRegistration);
-                    userClans.Add(userClanRegistration);
-                }
+                //                var x = userClans.FirstOrDefault(uc => uc.UserId == currentUserId && uc.ClanId == clan.ClanId);
+                //                if (x == null)
+                //                {
+                //                    _context.UserClanRegisterations.Add(userClanRegistration);
+                //                    userClans.Add(userClanRegistration);
+                //                }
 
             }
+
+            
 
             _context.SaveChanges();
 
@@ -208,7 +216,7 @@ namespace TourismReco2.Controllers
         public async Task<ActionResult> SaveAndShowSelectedRecommendations(ShowRecommendationsViewModel viewModel)
         {
             var allFinalRecommendations = _context.SelectedRecommendations.ToList();
-            
+
             var recommendations = new List<CalculatedRecommendation>();
             foreach (var recommendation in viewModel.CalculatedRecommendations)
             {
@@ -247,17 +255,17 @@ namespace TourismReco2.Controllers
             //Retreiving all the recommendations for the user to be displayed.
             var userId = User.Identity.GetUserId();
             var finalRecommendations = _context.SelectedRecommendations.Where(r => r.UserId == userId).ToList();
-            
+
             return View(finalRecommendations);
         }
 
 
 
-        
+
         //************************************PRIVATE METHODS************************************//
 
-        
-        
+
+
         private void CalculateRecommendations()
         {
             var subClanRegistrations = _context.SubClanPriorityRegistrations.ToList();

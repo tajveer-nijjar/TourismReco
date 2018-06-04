@@ -16,5 +16,7 @@ namespace TourismReco2.Models
         public Clan Clan { get; set; }
         
         public double? ClanPreference { get; set; }
+
+        public int DateTimeDayOfTheYear { get; set; }
     }
 }

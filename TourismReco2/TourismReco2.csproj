@@ -317,6 +317,14 @@
     <Compile Include="Migrations\201805312122333_AddMoreItems.Designer.cs">
       <DependentUpon>201805312122333_AddMoreItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806040712098_AddedDateTimeToUserClanRegistration.cs" />
+    <Compile Include="Migrations\201806040712098_AddedDateTimeToUserClanRegistration.Designer.cs">
+      <DependentUpon>201806040712098_AddedDateTimeToUserClanRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806040715570_UpdatedDateTimeToUserClanRegistration.cs" />
+    <Compile Include="Migrations\201806040715570_UpdatedDateTimeToUserClanRegistration.Designer.cs">
+      <DependentUpon>201806040715570_UpdatedDateTimeToUserClanRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -720,6 +728,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805312122333_AddMoreItems.resx">
       <DependentUpon>201805312122333_AddMoreItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806040712098_AddedDateTimeToUserClanRegistration.resx">
+      <DependentUpon>201806040712098_AddedDateTimeToUserClanRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806040715570_UpdatedDateTimeToUserClanRegistration.resx">
+      <DependentUpon>201806040715570_UpdatedDateTimeToUserClanRegistration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
