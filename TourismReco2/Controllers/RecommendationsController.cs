@@ -63,6 +63,7 @@ namespace TourismReco2.Controllers
                 var userClanRegistration = new UserClanRegisteration()
                 {
                     ClanId = clan.ClanId,
+                    //Clan = clan,
                     UserId = currentUserId,
                     DateTimeDayOfTheYear = DateTime.Now.DayOfYear
                 };
@@ -77,25 +78,29 @@ namespace TourismReco2.Controllers
                 //                    userClans.Add(userClanRegistration);
                 //                }
 
+
+                //Adding UserId to all CheckClans
+                clan.UserId = currentUserId;
+
             }
 
-            
+
 
             _context.SaveChanges();
 
             //Fetching only clans that are registered to a user
-            var clans = new List<Clan>();
-            var allClans = _context.Clans.ToList();
-            foreach (var clanRegisteration in userClans)
-            {
-                var registeredClan = allClans.SingleOrDefault(ac => ac.ClanId == clanRegisteration.ClanId);
-                registeredClan.UserId = currentUserId;
-                clans.Add(registeredClan);
-            }
+//            var clans = new List<Clan>();
+//            var allClans = _context.Clans.ToList();
+//            foreach (var clanRegisteration in userClans)
+//            {
+//                var registeredClan = allClans.SingleOrDefault(ac => ac.ClanId == clanRegisteration.ClanId);
+//                registeredClan.UserId = currentUserId;
+//                clans.Add(registeredClan);
+//            }
 
 
 
-            return View("SelectClanPriority", clans);
+            return View("SelectClanPriority", checkedClans);
         }
 
         public ActionResult SaveClanPriority(List<Clan> clans)
@@ -124,8 +129,11 @@ namespace TourismReco2.Controllers
             foreach (var clanRegisteration in userClansInDatabase)
             {
                 //Finding if UserClan in database is present in current selection
-                var selectedClan = clans.SingleOrDefault(c =>
-                    c.ClanId == clanRegisteration.ClanId && c.UserId == clanRegisteration.UserId);
+                var selectedClanByClanId = clans.Where(c => c.ClanId == clanRegisteration.ClanId).ToList();
+                var selectedClan = selectedClanByClanId.SingleOrDefault(c => c.UserId == clanRegisteration.UserId);
+                
+//                var selectedClan = clans.SingleOrDefault(c =>
+//                    c.ClanId == clanRegisteration.ClanId && c.UserId == clanRegisteration.UserId);
                 if (selectedClan != null)
                 {
                     clanRegisteration.ClanPreference = selectedClan.ClanPreference;

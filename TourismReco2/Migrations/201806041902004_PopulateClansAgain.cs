@@ -3,7 +3,7 @@ namespace TourismReco2.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class PopulateMoreClans : DbMigration
+    public partial class PopulateClansAgain : DbMigration
     {
         public override void Up()
         {

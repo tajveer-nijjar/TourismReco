@@ -325,6 +325,30 @@
     <Compile Include="Migrations\201806040715570_UpdatedDateTimeToUserClanRegistration.Designer.cs">
       <DependentUpon>201806040715570_UpdatedDateTimeToUserClanRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806041900564_ResetPrimaryKey.cs" />
+    <Compile Include="Migrations\201806041900564_ResetPrimaryKey.Designer.cs">
+      <DependentUpon>201806041900564_ResetPrimaryKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806041902004_PopulateClansAgain.cs" />
+    <Compile Include="Migrations\201806041902004_PopulateClansAgain.Designer.cs">
+      <DependentUpon>201806041902004_PopulateClansAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806041903373_ResetPrimaryKeyForSubClans.cs" />
+    <Compile Include="Migrations\201806041903373_ResetPrimaryKeyForSubClans.Designer.cs">
+      <DependentUpon>201806041903373_ResetPrimaryKeyForSubClans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806041904313_PopulateSubClansAgain.cs" />
+    <Compile Include="Migrations\201806041904313_PopulateSubClansAgain.Designer.cs">
+      <DependentUpon>201806041904313_PopulateSubClansAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806041907283_PopulateItemsAgain.cs" />
+    <Compile Include="Migrations\201806041907283_PopulateItemsAgain.Designer.cs">
+      <DependentUpon>201806041907283_PopulateItemsAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806041918594_PopulateSomeMoreItemsAgain.cs" />
+    <Compile Include="Migrations\201806041918594_PopulateSomeMoreItemsAgain.Designer.cs">
+      <DependentUpon>201806041918594_PopulateSomeMoreItemsAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -734,6 +758,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806040715570_UpdatedDateTimeToUserClanRegistration.resx">
       <DependentUpon>201806040715570_UpdatedDateTimeToUserClanRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806041900564_ResetPrimaryKey.resx">
+      <DependentUpon>201806041900564_ResetPrimaryKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806041902004_PopulateClansAgain.resx">
+      <DependentUpon>201806041902004_PopulateClansAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806041903373_ResetPrimaryKeyForSubClans.resx">
+      <DependentUpon>201806041903373_ResetPrimaryKeyForSubClans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806041904313_PopulateSubClansAgain.resx">
+      <DependentUpon>201806041904313_PopulateSubClansAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806041907283_PopulateItemsAgain.resx">
+      <DependentUpon>201806041907283_PopulateItemsAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806041918594_PopulateSomeMoreItemsAgain.resx">
+      <DependentUpon>201806041918594_PopulateSomeMoreItemsAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
