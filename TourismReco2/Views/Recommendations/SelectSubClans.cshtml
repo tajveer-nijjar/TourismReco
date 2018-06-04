@@ -9,6 +9,11 @@
 
         <div class="container">
             <h2>Select Sub Clan preference levels</h2>
+            
+            <p style="margin-left: 10px; margin-bottom: 0;">Every clan is sub-divided into SubClans (sub-categories). <br/>
+                Please choose your preference for SubClans.</p>
+
+            
             @using (Html.BeginForm("SaveSubClanPriority", "Recommendations", FormMethod.Post, new { @class = "reco_form" }))
             {
                 <div class="reco_form_overlay">

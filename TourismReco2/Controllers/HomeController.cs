@@ -27,6 +27,13 @@ namespace TourismReco2.Controllers
             return View();
         }
 
+        public ActionResult ClanDetail(int clanId)
+        {
+
+
+            return View();
+        }
+
 
     }
 }

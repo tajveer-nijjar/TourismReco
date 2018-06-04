@@ -8,9 +8,12 @@
     <section>
         <div class="container-fluid">
             <h2>Following are the selected Recommendations</h2>
-            
-            @Html.ActionLink("Start new Recommendation", "RecommendationsForm", "Recommendations","", new {@class = "btn btn-primary startAgain"})
-            
+            <p class="pageDescription" style="margin-left: 20px; margin-bottom: 10px;">Following are the recommendations selected by you with a potential shortest path shown on GoogleMaps. </p>
+
+            @Html.ActionLink("Start new Recommendation", "RecommendationsForm", "Recommendations", "", new { @class = "btn btn-primary startAgain" })
+
+            <input type="button" id="btnPrint" value="Print this page" />
+
             <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAoZTM1BsKycBiw_LrLlXzGqTf0tMdSGPk"></script>
             @*    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>*@
 
@@ -51,8 +54,8 @@
                                         </li>
 
                                     </div>
-  
-                                    
+
+
                                     @*                        @Html.CheckBoxFor(r => r[i].ChosenByUser) &nbsp; &nbsp; &nbsp;*@
 
                                 }
@@ -162,7 +165,13 @@
     </section>
 </div>
 
-<script>
-    
-    
-</script>
+@section scripts
+{
+    <script>
+        $(function () {
+            $("#btnPrint").click(function () {
+                window.print();
+            });
+        });
+    </script>
+}
