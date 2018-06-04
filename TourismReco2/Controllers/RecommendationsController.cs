@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using TourismReco2.HelperClasses;
 using TourismReco2.Models;
@@ -164,9 +165,15 @@ namespace TourismReco2.Controllers
             var userClanRegistrations = _context.UserClanRegisterations.ToList();
             var subClansInDb = _context.SubClans.ToList();
             var clansInDb = _context.Clans.ToList();
+            var userId = User.Identity.GetUserId();
             var registeredClans = new List<Clan>();
             var allSubClanPriorityRegistrations = _context.SubClanPriorityRegistrations.ToList();
 
+            var subClanRegistrationsForCurrentUser = allSubClanPriorityRegistrations.Where(r => r.UserId == userId);
+            //Removing all SubClanRegistrations for the user
+            _context.SubClanPriorityRegistrations.RemoveRange(subClanRegistrationsForCurrentUser);
+//            _context.SaveChanges();
+            
             //Adding ClanPreference values that are stored in the database to the "clans" list.
             foreach (var clanRegisteration in userClanRegistrations)
             {
@@ -191,7 +198,7 @@ namespace TourismReco2.Controllers
                 }
             }
 
-
+            //Adding
             foreach (var clan in registeredClans)
             {
                 foreach (var subClan in clan.SubClans)
@@ -205,7 +212,7 @@ namespace TourismReco2.Controllers
 
                     var isPresent = allSubClanPriorityRegistrations.Any(r =>
                         r.UserId == User.Identity.GetUserId() && r.SubClanId == subClan.SubClanId);
-                    if (!isPresent)
+                    if (!isPresent) //Not present.
                     {
                         _context.SubClanPriorityRegistrations.Add(subClanPriorityRegistration);
                     }
@@ -224,7 +231,13 @@ namespace TourismReco2.Controllers
         public async Task<ActionResult> SaveAndShowSelectedRecommendations(ShowRecommendationsViewModel viewModel)
         {
             var allFinalRecommendations = _context.SelectedRecommendations.ToList();
+            var userId = User.Identity.GetUserId();
 
+            //Deleting earlier selected recommendations by users.
+            var finalRecommendationsForUser = allFinalRecommendations.Where(r => r.UserId == userId).ToList();
+            _context.SelectedRecommendations.RemoveRange(finalRecommendationsForUser);
+            _context.SaveChanges();
+            
             var recommendations = new List<CalculatedRecommendation>();
             foreach (var recommendation in viewModel.CalculatedRecommendations)
             {
@@ -244,14 +257,14 @@ namespace TourismReco2.Controllers
                             UserId = recommendation.UserId
                         };
 
-                        var ifPresent = allFinalRecommendations
-                            .Any(r => r.ItemId == recommendation.ItemId && r.UserId == User.Identity.GetUserId());
+//                        var ifPresent = allFinalRecommendations
+//                            .Any(r => r.ItemId == recommendation.ItemId && r.UserId == User.Identity.GetUserId());
 
-                        if (!ifPresent)
-                        {
+//                        if (!ifPresent)
+//                        {
                             _context.SelectedRecommendations.Add(selectedRecommendation);
                             _selectedRecommendations.Add(selectedRecommendation);
-                        }
+//                        }
                     }
                 }
             }
@@ -261,7 +274,6 @@ namespace TourismReco2.Controllers
             _context.SaveChanges();
 
             //Retreiving all the recommendations for the user to be displayed.
-            var userId = User.Identity.GetUserId();
             var finalRecommendations = _context.SelectedRecommendations.Where(r => r.UserId == userId).ToList();
 
             return View(finalRecommendations);
@@ -290,7 +302,9 @@ namespace TourismReco2.Controllers
                 var subClanId = registration.SubClanId;
 
                 var subClanItems = allItems.Where(a => a.SubClanId == subClanId).ToList();
-
+                subClanItems = subClanItems.DistinctBy(i => i.ItemName).Distinct().ToList();
+                
+                
                 foreach (var subClanItem in subClanItems)
                 {
                     _calculatedRecommendation = new CalculatedRecommendation()
