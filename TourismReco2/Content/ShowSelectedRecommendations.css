@@ -1,6 +1,7 @@
 ﻿#show-selected-reco ol.list-group {
     display: inline-block;
     border: 1px solid #796E5F;
+    width: 100%;
 }
 
 

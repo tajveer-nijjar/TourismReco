@@ -38,8 +38,11 @@
                                             </div>
                                             <div id="collapse-@i" class="panel-collapse collapse">
                                                 <div class="panel-body">
-                                                    <p>
+                                                    <p class="itemAddress">
                                                         @Model[i].Item.ItemAddress
+                                                    </p>
+                                                    <p class="itemRating">
+                                                        <strong>TripAdvisor rating: @Model[i].Item.ItemRating</strong>
                                                     </p>
                                                 </div>
                                             </div>

@@ -11,16 +11,14 @@
 
     });
 
-    var x = $('#accordion .panel-collapse');
+    jQuery(".panel-heading").click(function() {
 
-    for (var i = 0; i < x.length; i++) {
-        x[i].collapse('toggle');
-    }
-    
-//    $('#accordion .panel-default').on('click', function () {
-//        .collapse('toggle');
-//    });    
-
+        jQuery('#accordion .panel-heading').not(this).removeClass('isOpen');
+        jQuery(this).toggleClass('isOpen');
+        jQuery(this).next(".panel-collapse").addClass('thePanel');
+        jQuery('#accordion .panel-collapse').not('.thePanel').slideUp("fast");
+        jQuery(".thePanel").slideToggle("fast").removeClass('thePanel');
+    });
 });
 
 
