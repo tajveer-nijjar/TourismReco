@@ -37,6 +37,7 @@
                                                 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-@i">
 
                                                     <strong>@Model.CalculatedRecommendations[i].Item.ItemName </strong>
+                                                    (@Model.CalculatedRecommendations[i].Item.Tag)
                                                     | <span class="recommendationWeight">Calculated Weight: @Model.CalculatedRecommendations[i].CalcultedWeight</span>
                                                 </a>
                                                 @Html.HiddenFor(r => r.CalculatedRecommendations[i].ItemId)

@@ -16,5 +16,7 @@
 //        public Location Location { get; set; }
 
         public int SubClanId { get; set; }
+
+        public string Tag { get; set; }
     }
 }

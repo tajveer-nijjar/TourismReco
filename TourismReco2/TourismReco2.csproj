@@ -349,6 +349,14 @@
     <Compile Include="Migrations\201806041918594_PopulateSomeMoreItemsAgain.Designer.cs">
       <DependentUpon>201806041918594_PopulateSomeMoreItemsAgain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806042150403_PopulateSomeMoreItems.cs" />
+    <Compile Include="Migrations\201806042150403_PopulateSomeMoreItems.Designer.cs">
+      <DependentUpon>201806042150403_PopulateSomeMoreItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806061952383_AddedTagToItem.cs" />
+    <Compile Include="Migrations\201806061952383_AddedTagToItem.Designer.cs">
+      <DependentUpon>201806061952383_AddedTagToItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\ClanPriority.cs" />
@@ -776,6 +784,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806041918594_PopulateSomeMoreItemsAgain.resx">
       <DependentUpon>201806041918594_PopulateSomeMoreItemsAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806042150403_PopulateSomeMoreItems.resx">
+      <DependentUpon>201806042150403_PopulateSomeMoreItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806061952383_AddedTagToItem.resx">
+      <DependentUpon>201806061952383_AddedTagToItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
