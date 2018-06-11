@@ -576,6 +576,7 @@
     <Content Include="Content\sass\_bootstrap-compass.scss" />
     <Content Include="Content\sass\_bootstrap-mincer.scss" />
     <Content Include="Content\sass\_bootstrap-sprockets.scss" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

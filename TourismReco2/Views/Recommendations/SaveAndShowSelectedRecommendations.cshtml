@@ -26,6 +26,8 @@
 
 
                         <div class="col-md-3">
+                            <p>Total distance: <span id="totalDistance" style="font-weight: 800;color:grey"></span></p>
+                            
                             <ol class="list-group">
 
                                 @for (int i = 0; i < Model.Count; i++)
@@ -84,6 +86,7 @@
                             var map;
                             var home = new google.maps.LatLng(@Model[0].Item.GeoPoint.Lat, @Model[0].Item.GeoPoint.Lng);
                             var home = new google.maps.LatLng(-46.413282, 168.355425);  //SIT's address
+                            var home = new google.maps.LatLng(-46.413958, 168.355711);  //SIT's actual address
 
                             var bars = new Array();
                             var barss = new Array();
@@ -150,7 +153,21 @@
                             };
 
 
-                            directionsService.route(request, function(result, status) {
+                            directionsService.route(request, function (result, status) {
+                                var route = result.routes[0];
+                                var totalDistance = 0;
+                                for (var i = 0; i < route.legs.length; i++) {
+                                    var dis = route.legs[i].distance.text;
+                                    dis = dis.replace(" km", '')
+                                    var disNum = parseFloat(dis);
+                                    
+                                    totalDistance = totalDistance + disNum;
+                                }
+
+                                var distanceTag = document.getElementById("totalDistance");
+                                distanceTag.innerText = totalDistance + " kms";
+                                console.log(totalDistance);
+                                
                                 if (status == google.maps.DirectionsStatus.OK) {
                                     directionsDisplay.setDirections(result);
                                 }
